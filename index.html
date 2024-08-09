@@ -22,11 +22,20 @@
 
 	<style>
 
-        ul.talent li {
-            align-items: Top; /* Top align content vertically within each item */
-            list-style-type: none; /* Remove default list styling */
-        
-        }
+		ul.talent {
+    		display: flex; /* Ensure the container is a flex container */
+    		align-items: stretch; /* Make all flex items stretch to the same height */
+    		padding: 0; /* Optional: Remove default padding */
+    		margin: 0; /* Optional: Remove default margin */
+		}
+
+		ul.talent li {
+    		list-style-type: none; /* Remove default list styling */
+    		flex: 1; /* Allow list items to grow and shrink to fill the space */
+    		display: flex; /* Optional: To manage inner content alignment */
+    		align-items: top; /* Optional: Top align content vertically within each item */
+		}
+
     </style>
 
 </head>
