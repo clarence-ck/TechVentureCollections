@@ -23,15 +23,18 @@
 	<style>
 		ul.talent {
 			display: flex;
-			flex-direction: column;
-			padding-left: 0; /* Remove default padding if needed */
-			margin: 0; /* Remove default margin if needed */
-			height: 100%; /* Ensure the container takes the full height if necessary */
+			flex-direction: column-reverse; /* Column-reverse to stack items from bottom to top */
+			padding-left: 0; /* Remove default padding */
+			margin: 0; /* Remove default margin */
+			height: 100%; /* Ensure the container takes the full height */
 			justify-content: space-between; /* Distribute space between items evenly */
 		}
 	
 		ul.talent li {
 			list-style-type: none; /* Remove default list styling */
+			flex: 1; /* Allow list items to grow and shrink to fill the space */
+			display: flex; /* Optional: To manage inner content alignment */
+			align-items: center; /* Center align content vertically within each item */
 		}
 	</style>
 	
