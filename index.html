@@ -31,6 +31,7 @@
 		
 		ul.talent li {
 			list-style-type: none; /* Remove default list styling */
+			flex-direction: column; /* Arrange items vertically */
 			display: flex; /* Ensure inner content aligns properly */
 			align-items: stretch; /* Ensure items stretch to match height */
 			justify-content: space-between; /* Distribute space between items evenly */
@@ -39,29 +40,6 @@
 	</style>
 
 </head>
-
-<script>
-	function setEqualHeight(elements) {
-		let maxHeight = 0;
-		elements.forEach(el => {
-			el.style.height = 'auto'; // Reset height
-			maxHeight = Math.max(maxHeight, el.clientHeight);
-		});
-		elements.forEach(el => {
-			el.style.height = maxHeight + 'px';
-		});
-	}
-
-	window.onload = function() {
-		const listItems = document.querySelectorAll('ul.talent li');
-		setEqualHeight(listItems);
-	};
-
-	window.onresize = function() {
-		const listItems = document.querySelectorAll('ul.talent li');
-		setEqualHeight(listItems);
-	};
-</script>
 
 <body>
 
