@@ -19,29 +19,24 @@
 		}
 	  
 		body {
-		  width: 100vh; /* Width based on viewport height */
+		  width: 100vh; /* Set width based on viewport height */
 		  overflow-x: hidden; /* Prevent horizontal scrollbars */
+		  height: 100vw; /* Ensure height adapts to viewport width */
 		}
 	  
-		/* Browser-specific prefixes for completeness */
-		@supports (width: -webkit-fill-available) {
+		/* Ensure landscape mode is the default view */
+		@media screen and (orientation: landscape) {
 		  body {
-			width: -webkit-fill-available;
+			width: 100vh; /* Width based on viewport height */
 		  }
 		}
 	  
-		@supports (width: -moz-available) {
+		@media screen and (orientation: portrait) {
 		  body {
-			width: -moz-available;
+			width: 100vh; /* Match portrait width to height of viewport */
 		  }
 		}
-	  
-		@supports (width: fill-available) {
-		  body {
-			width: fill-available;
-		  }
-		}
-	  </style>
+	</style>
 
 	<meta charset="utf-8" />
 
