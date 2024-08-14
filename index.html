@@ -18,24 +18,26 @@
 		  box-sizing: border-box;
 		}
 	  
-		@media screen and (orientation: landscape) {
-		  /* Styles for landscape mode */
+		body {
+		  width: 100vh; /* Width based on viewport height */
+		  overflow-x: hidden; /* Prevent horizontal scrollbars */
+		}
+	  
+		/* Browser-specific prefixes for completeness */
+		@supports (width: -webkit-fill-available) {
 		  body {
-			width: 100vh;
-			/* Browser-specific prefixes for completeness, although most modern browsers don't need these */
 			width: -webkit-fill-available;
-			width: -moz-available;
-			width: fill-available;
 		  }
 		}
 	  
-		@media screen and (orientation: portrait) {
-		  /* Styles for portrait mode */
+		@supports (width: -moz-available) {
 		  body {
-			width: 100vh;
-			/* Browser-specific prefixes */
-			width: -webkit-fill-available;
 			width: -moz-available;
+		  }
+		}
+	  
+		@supports (width: fill-available) {
+		  body {
 			width: fill-available;
 		  }
 		}
