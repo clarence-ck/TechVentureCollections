@@ -8,7 +8,7 @@
 	
 	<meta property="og:description" content="Explore his portfolio: ICIJ FinCEN Files data analytics, RPA, PETs, cloud data engineering.">
 	
-	<meta name="viewport" content="width=device-width, initial-scale=0.4" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<style>
 		/* General reset for consistency across browsers */
@@ -16,19 +16,23 @@
 		  margin: 0;
 		  padding: 0;
 		  box-sizing: border-box;
+		  width: 100vw;
+		  height: 100vh;
 		}
 	  
 		@media (orientation: landscape) {
 		  body {
-			width: 100vw; /* Set width to viewport width in landscape */
-			height: 100vh; /* Set height to viewport height in landscape */
+			/* Landscape orientation: width and height are 100% of viewport */
+			width: 100vw;
+			height: 100vh;
 		  }
 		}
 	  
 		@media (orientation: portrait) {
 		  body {
-			width: 100vh; /* Use viewport height for width in portrait */
-			height: 100vw; /* Use viewport width for height in portrait */
+			/* Portrait orientation: width and height should swap to match the landscape view */
+			width: 100vw;
+			height: 100vh;
 		  }
 		}
 	  </style>
