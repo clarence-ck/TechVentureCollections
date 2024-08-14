@@ -9,6 +9,24 @@
 	<meta property="og:description" content="Explore his portfolio: ICIJ FinCEN Files data analytics, RPA, PETs, cloud data engineering.">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=0.4" />
+
+	<style>
+        /* Ensure body takes full viewport width and adjusts height for a landscape-like aspect ratio */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;  /* Full viewport width */
+            height: 56.25vw; /* Height proportional to 16:9 aspect ratio */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto;  /* Allow vertical scrolling if needed */
+        }
+
+        @media (orientation: portrait) {
+            body {
+                height: 56.25vw; /* Ensure height maintains the aspect ratio in portrait mode */
+            }
+        }
+    </style>
 	
 	<meta charset="utf-8" />
 
