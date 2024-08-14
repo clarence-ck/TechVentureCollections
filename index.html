@@ -18,16 +18,30 @@
 		  box-sizing: border-box;
 		}
 	  
-		/* Ensure landscape mode is the default view */
+		/* Base styles for both orientations */
+		body {
+		  width: 100vw;
+		  height: 100vh;
+		  overflow: auto;
+		}
+	  
+		/* Styles for landscape orientation */
 		@media screen and (orientation: landscape) {
 		  body {
-			width: 100vh; /* Width based on viewport height */
+			width: 100vw;
 		  }
 		}
 	  
+		/* Styles for portrait orientation */
 		@media screen and (orientation: portrait) {
 		  body {
-			width: 100vh; /* Match portrait width to height of viewport */
+			width: 100vw;
+			height: 100vw; /* Set height to match width in portrait mode */
+			transform: rotate(90deg);
+			transform-origin: bottom left;
+			position: absolute;
+			top: -100vw;
+			left: 0;
 		  }
 		}
 	</style>
