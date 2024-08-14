@@ -8,31 +8,51 @@
 	
 	<meta property="og:description" content="Explore his portfolio: ICIJ FinCEN Files data analytics, RPA, PETs, cloud data engineering.">
 	
-	<meta name="viewport" content="width=device-width, initial-scale=0.4" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<style>
-		@media screen and (orientation: landscape) {
-		  /* Styles for landscape mode */
-		  body {
-			width: 100vw;
-			/* Browser-specific prefixes for completeness, although most modern browsers don't need these */
-			width: -webkit-fill-available;
-			width: -moz-available;
-			width: fill-available;
-		  }
-		}
-	  
-		@media screen and (orientation: portrait) {
-		  /* Styles for portrait mode */
-		  body {
-			width: 100vh;
-			/* Browser-specific prefixes */
-			width: -webkit-fill-available;
-			width: -moz-available;
-			width: fill-available;
-		  }
-		}
-	  </style>
+  		/* General reset */
+  		* {
+    		margin: 0;
+    		padding: 0;
+    		box-sizing: border-box;
+  		}
+
+  		body {
+    		margin: 0;
+    		padding: 0;
+  		}
+
+  		@media screen and (orientation: landscape) {
+    		/* Styles for landscape mode */
+    	body {
+      			width: 100vw;
+      			height: 100vh; /* Ensures the height takes up the full viewport height */
+      			/* Browser-specific prefixes for completeness */
+      			width: -webkit-fill-available;
+      			width: -moz-available;
+      			width: fill-available;
+      			height: -webkit-fill-available;
+      			height: -moz-available;
+      			height: fill-available;
+    		}
+  		}
+
+  		@media screen and (orientation: portrait) {
+    		/* Styles for portrait mode */
+    	body {
+      			width: 100vh; /* This makes the width of the viewport equal to the height of the viewport in portrait mode */
+      			height: 100vw; /* This makes the height of the viewport equal to the width of the viewport in portrait mode */
+      			/* Browser-specific prefixes for completeness */
+      			width: -webkit-fill-available;
+      			width: -moz-available;
+      			width: fill-available;
+      			height: -webkit-fill-available;
+      			height: -moz-available;
+      			height: fill-available;
+    		}
+  		}
+	</style>
 	
 	<meta charset="utf-8" />
 
