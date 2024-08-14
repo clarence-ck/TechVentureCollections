@@ -15,22 +15,37 @@
 		* {
 		  margin: 0;
 		  padding: 0;
+		  box-sizing: border-box;
 		}
-
-		/* Styles for landscape orientation */
-		@media screen and (orientation: landscape) {
+	  
+		html, body {
+		  height: 100%; /* Ensure body takes up full viewport height */
+		  width: 100%; /* Ensure body takes up full viewport width */
+		}
+	  
+		body {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  width: 100vh; /* Use viewport height for width */
+		  height: 100vw; /* Use viewport width for height */
+		  overflow: hidden; /* Prevent overflow */
+		}
+	  
+		@media (orientation: landscape) {
 		  body {
-			width: 100vw;
+			width: 100vw; /* Set width to viewport width in landscape */
+			height: 100vh; /* Set height to viewport height in landscape */
 		  }
 		}
 	  
-		/* Styles for portrait orientation */
-		@media screen and (orientation: portrait) {
+		@media (orientation: portrait) {
 		  body {
-			width: 100vh;
+			width: 100vh; /* Use viewport height for width in portrait */
+			height: 100vw; /* Use viewport width for height in portrait */
 		  }
 		}
-	</style>
+	  </style>
 
 	<meta charset="utf-8" />
 
