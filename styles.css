@@ -27,10 +27,12 @@ body {
     background: var(--bg-secondary);
     color: var(--text-primary);
     line-height: 1.6;
+    min-width: 1140px; /* Ensure minimum width for desktop layout */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 #doc2 {
-    max-width: 1140px;
+    width: 1140px; /* Fixed width for desktop layout */
     margin: 2rem auto;
     background: var(--bg-primary);
     border-radius: 20px;
@@ -57,6 +59,7 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     align-items: center;
+    min-width: 0; /* Prevent grid overflow */
 }
 
 h1 {
@@ -73,34 +76,86 @@ h2 {
     line-height: 1.8;
 }
 
-/* Header Titles */
-#hd h1, #hd h2, #hd h3 {
-    color: #ffffff;
-}
-
 /* Content Sections */
 .yui-gf {
     margin-bottom: 3rem;
     position: relative;
 }
 
-.yui-u.first h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--accent);
+/* Project Cards */
+.project-cards {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    min-width: 0; /* Prevent grid overflow */
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+/* Tech Stack Badges */
+.tech-stack {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding-left: 0.125rem;
+}
+
+.tech-badge {
+    display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* Ensure all containers maintain desktop widths */
+.tab-navigation,
+.project-grid,
+.certification,
+.experience-section {
+    min-width: fit-content;
     width: 100%;
 }
 
-.yui-u.first h2::after {
-    content: "";
-    flex: 1;
-    height: 2px;
-    background: var(--border);
-    margin-left: 0.5rem;
+/* Maintain spacing and layout */
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-link {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+}
+
+/* Force desktop-style scrolling */
+html, body {
+    -webkit-text-size-adjust: none; /* Prevent mobile text scaling */
+    text-size-adjust: none;
+}
+
+/* Header Titles */
+#hd h1, #hd h2, #hd h3 {
+    color: #ffffff;
 }
 
 /* Skills Section */
