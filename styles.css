@@ -542,7 +542,7 @@ h2 {
 }
 
 .job-content ul {
-    list-style: none;
+    list-style-type: disc;
     padding-left: 1.5rem;
     margin: 1rem 0;
 }
@@ -551,18 +551,15 @@ h2 {
     position: relative;
     margin-bottom: 0.75rem;
     line-height: 1.6;
-}
-
-.job-content ul li::before {
-    content: "•";
-    color: var(--text-primary);
-    font-weight: bold;
-    position: absolute;
-    left: -1.5rem;
+    padding-left: 0.5rem;
 }
 
 .job-content ul li:last-child {
     margin-bottom: 0;
+}
+
+.job-content ul li::before {
+    display: none;
 }
 
 .job-content p {
