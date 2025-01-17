@@ -857,19 +857,155 @@ h2 {
 /* Landscape Mode Optimizations */
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     #doc2 {
-        margin: 1rem auto;
+        margin: 0.5rem auto;
     }
 
+    #inner {
+        padding: 1rem;
+    }
+
+    #hd {
+        padding: 1rem;
+        margin: -1rem -1rem 1rem -1rem;
+    }
+
+    /* Optimize header for landscape */
+    .yui-gc {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    h1 {
+        font-size: clamp(20px, 4vw, 32px);
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: clamp(14px, 2.5vw, 20px);
+    }
+
+    /* Adjust highlight stats for landscape */
     .highlight-stats {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Optimize tab navigation */
+    .tab-navigation {
+        position: sticky;
+        top: 0;
+        background: var(--bg-primary);
+        padding: 0.5rem;
+        z-index: 100;
+        box-shadow: 0 2px 4px var(--shadow);
     }
 
     .tab-button {
-        flex: 1 1 calc(33.33% - 0.5rem);
+        flex: 1 1 auto;
+        padding: 0.5rem;
+        min-height: 36px;
+        font-size: 0.85rem;
+    }
+
+    /* Content sections */
+    .yui-gf {
+        margin-bottom: 1.5rem;
     }
 
     .talent {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .talent > div {
+        padding: 0.75rem;
+    }
+
+    .talent h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .talent p {
+        font-size: 0.85rem;
+        margin: 0.25rem 0;
+    }
+
+    /* Project cards */
+    .project-cards {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .project-card {
+        padding: 0.75rem;
+        padding-left: 1rem;
+    }
+
+    .project-header h3 {
+        font-size: 1rem;
+    }
+
+    .tech-stack {
+        gap: 0.4rem;
+    }
+
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Certifications and Experience */
+    .certification .job,
+    .job {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .job-header h2,
+    .certification h3 {
+        font-size: 1rem;
+    }
+
+    .job-header h4 {
+        font-size: 0.85rem;
+    }
+
+    ul {
+        margin: 0.5rem 0;
+        padding-left: 1.25rem;
+    }
+
+    li {
+        font-size: 0.85rem;
+        margin: 0.25rem 0;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 0.75rem 0;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        font-size: 0.85rem;
     }
 }
 
