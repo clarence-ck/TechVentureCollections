@@ -1173,3 +1173,53 @@ h2 {
 .lightbulb-icon::before {
     background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
 }
+
+/* Experience Card Styles */
+.experience-card {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card .job {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.experience-card .job:last-child {
+    margin-bottom: 0;
+}
+
+.experience-card .job::before {
+    display: none;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(135deg, #0984e3, #00cec9, #0984e3);
+    background-size: 100% 200%;
+}
+
+@media screen and (max-width: 768px) {
+    .experience-card {
+        padding: 1.25rem;
+        padding-left: 1.75rem;
+    }
+    
+    .experience-card .job {
+        margin-bottom: 1.5rem;
+    }
+}
