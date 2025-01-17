@@ -531,150 +531,37 @@ h2 {
 }
 
 /* Responsive Design Improvements */
-@media screen and (max-width: 1024px) {
-    #doc2 {
-        margin: 1rem;
-        max-width: none;
-    }
-    
-    #inner {
-        padding: 2rem;
-    }
-    
-    #hd {
-        margin: -2rem -2rem 2rem -2rem;
-        padding: 2rem;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    .yui-gc {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .talent {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-    
     .tab-navigation {
+        display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
+        justify-content: center;
     }
     
     .tab-button {
-        flex: 1 1 calc(50% - 0.5rem);
-        white-space: nowrap;
-        padding: 0.75rem;
+        padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
-    
-    .tech-stack {
-        gap: 0.5rem;
-    }
-    
-    .tech-badge {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
-    }
-}
 
-@media screen and (max-width: 480px) {
-    #inner {
-        padding: 1rem;
-    }
-    
-    #hd {
-        margin: -1rem -1rem 1rem -1rem;
-        padding: 1.5rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.1rem;
-    }
-    
-    .tab-button {
-        flex: 1 1 100%;
-    }
-    
-    .project-card, .job {
-        padding: 1rem;
-        padding-left: 1.5rem;
-    }
-}
-
-/* Landscape Mode */
-@media screen and (max-height: 480px) and (orientation: landscape) {
-    #doc2 {
-        margin: 0.5rem;
-    }
-    
-    #inner {
-        padding: 1rem;
-    }
-    
-    #hd {
-        margin: -1rem -1rem 1rem -1rem;
-        padding: 1rem;
-    }
-    
-    .tab-navigation {
-        position: sticky;
-        top: 0;
-        background: var(--bg-primary);
-        z-index: 100;
-        padding: 0.5rem 0;
-    }
-    
-    .project-cards, .certification {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .yui-gc {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
-}
 
-/* Desktop Site Override */
-@media screen and (min-width: 1025px) {
-    #doc2 {
-        max-width: 1140px;
-        margin: 2rem auto;
-    }
-    
-    .yui-gc {
-        grid-template-columns: 2fr 1fr;
-    }
-    
     .project-cards {
         grid-template-columns: 1fr;
-    }
-    
-    .tab-navigation {
-        flex-wrap: nowrap;
     }
 }
 
 /* Tab Container */
 #yui-main {
     position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 /* Tab Section Styles */
 .tab-section {
     display: none;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 .tab-section.active {
@@ -834,12 +721,12 @@ h2 {
         margin: -1.5rem -1.5rem 2rem -1.5rem;
     }
 
-    .yui-gc {
-        grid-template-columns: 1fr;
-    }
-
     h1 {
         font-size: 2.5rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
     }
 
     .talent {
@@ -1172,96 +1059,156 @@ h2 {
     background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
 }
 
-/* Base container styles */
-.yui-b {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+/* Mobile Portrait */
+@media screen and (max-width: 480px) {
+    #doc2 {
+        margin: 0;
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    #inner {
+        padding: 1rem;
+    }
+
+    #hd {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .talent {
+        grid-template-columns: 1fr;
+    }
+
+    .project-cards {
+        gap: 1rem;
+    }
+
+    .tech-stack {
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.75rem;
+    }
 }
 
-/* Content scaling improvements */
-.profile-summary, .job, .project-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+/* Mobile Landscape */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #doc2 {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    #inner {
+        padding: 1.5rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .talent {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
-.profile-summary p, .job p, .project-card p {
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #doc2 {
+        margin: 1.5rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .talent {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 }
 
-.profile-summary ul, .job ul {
-    width: 100%;
-    max-width: 100%;
-    padding-right: 1rem;
-    box-sizing: border-box;
-}
-
-.profile-summary ul li, .job ul li {
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-/* Desktop site override improvements */
+/* Ensure desktop view remains intact when requested */
 @media screen and (min-width: 1025px) {
     #doc2 {
-        width: 100%;
         max-width: 1140px;
         margin: 2rem auto;
-        overflow-x: hidden;
     }
-    
-    #inner {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
+
     .yui-gc {
         grid-template-columns: 2fr 1fr;
-        width: 100%;
-        max-width: 100%;
     }
-    
-    .project-cards {
-        grid-template-columns: 1fr;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .tab-navigation {
-        flex-wrap: nowrap;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    /* Ensure text content scales properly */
-    .profile-summary, .job, .project-card {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    /* Improve list readability */
-    .profile-summary ul, .job ul {
-        margin-left: 0;
-        padding-left: 2rem;
-    }
-    
-    /* Ensure proper text wrapping */
-    h1, h2, h3, h4, p, li {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+
+    .talent {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
-/* Prevent content overflow */
-* {
-    max-width: 100%;
+/* Handle orientation changes */
+@media screen and (orientation: portrait) and (max-width: 480px) {
+    .project-card {
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .project-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 480px) {
+    #doc2 {
+        margin: 0;
+    }
+
+    #hd {
+        padding: 1.5rem;
+    }
+
+    .project-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .tech-stack {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Print styles for desktop view */
+@media print {
+    #doc2 {
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .tab-navigation {
+        display: none;
+    }
+
+    .tab-section {
+        display: block !important;
+        break-inside: avoid;
+    }
 }
