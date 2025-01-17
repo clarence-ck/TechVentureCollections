@@ -1347,3 +1347,129 @@ img {
         min-width: 320px;
     }
 }
+
+/* Improved tab navigation for mobile */
+.tab-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tab-button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 768px) {
+    /* Improved header layout */
+    .highlight-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    /* Better job and certification layouts */
+    .job, .certification {
+        padding: 1.5rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Improve tech stack badges */
+    .tech-stack {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Better education section layout */
+    .education {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    /* Improved profile summary readability */
+    .profile-summary {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .profile-summary ul {
+        padding-left: 1.5rem;
+    }
+
+    /* Better spacing for nested content */
+    .yui-gf {
+        margin-bottom: 2rem;
+    }
+
+    .yui-u.first h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Accessibility improvements */
+:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.tab-button:focus-visible,
+.tech-badge:focus-visible,
+.project-card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Print styles */
+@media print {
+    #doc2 {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .tab-navigation {
+        display: none;
+    }
+
+    .tab-section {
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+    }
+}
