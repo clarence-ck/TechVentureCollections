@@ -35,3 +35,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Mobile Navigation
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const tabNavigation = document.querySelector('.tab-navigation');
+const tabButtons = document.querySelectorAll('.tab-button');
+
+function toggleMobileNav() {
+    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+    tabNavigation.classList.toggle('active');
+    document.body.style.overflow = isExpanded ? '' : 'hidden';
+
+    // Animate hamburger to X
+    mobileNavToggle.classList.toggle('active');
+}
+
+mobileNavToggle.addEventListener('click', toggleMobileNav);
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+    if (tabNavigation.classList.contains('active') &&
+        !tabNavigation.contains(e.target) &&
+        !mobileNavToggle.contains(e.target)) {
+        toggleMobileNav();
+    }
+});
+
+// Close mobile nav when clicking a tab button
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (tabNavigation.classList.contains('active')) {
+            toggleMobileNav();
+        }
+    });
+});
+
+// Handle resize events
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 768 && tabNavigation.classList.contains('active')) {
+            toggleMobileNav();
+        }
+    }, 250);
+});
