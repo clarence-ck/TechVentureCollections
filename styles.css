@@ -106,7 +106,7 @@ h2 {
 /* Skills Section */
 .talent {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -139,6 +139,7 @@ h2 {
     display: grid;
     gap: 1.5rem;
     width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .project-card {
@@ -200,8 +201,8 @@ h2 {
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 0.75rem;
+    margin: 1rem 0;
     padding-left: 0.125rem;
     width: 100%;
 }
@@ -580,30 +581,6 @@ h2 {
     font-weight: 400;
 }
 
-@media (max-width: 768px) {
-    .experience-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .experience-title {
-        font-size: 1.35rem;
-    }
-    
-    .experience-duration {
-        font-size: 0.9rem;
-    }
-    
-    .job-header.main-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .job-header.main-header h2 {
-        font-size: 1.35rem;
-    }
-}
-
 /* Tab Navigation Styles */
 .tab-navigation {
     display: flex;
@@ -633,136 +610,6 @@ h2 {
     color: white;
 }
 
-/* Responsive Design Improvements */
-@media screen and (max-width: 768px) {
-    .tab-navigation {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-    
-    .tab-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    #doc2 {
-        margin: 1rem;
-        border-radius: 15px;
-    }
-
-    #inner {
-        padding: 1.5rem;
-    }
-
-    #hd {
-        padding: 2rem;
-        margin: -1.5rem -1.5rem 2rem -1.5rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .talent {
-        grid-template-columns: 1fr;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-    .project-card,
-    .job,
-    .talent > div,
-    button,
-    a {
-        min-height: 44px;
-        padding: 1.2rem;
-    }
-
-    .project-card,
-    .job {
-        margin-bottom: 1rem;
-    }
-}
-
-/* Desktop Optimizations */
-@media screen and (min-width: 769px) {
-    .project-cards {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-
-    .talent {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Hover effects only on desktop */
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px var(--shadow);
-    }
-}
-
-/* Navigation Menu */
-.nav-toggle {
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1000;
-        padding: 0.8rem;
-        background: var(--accent);
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        max-width: 300px;
-        background: var(--bg-primary);
-        padding: 2rem;
-        transition: right 0.3s ease;
-        z-index: 999;
-        box-shadow: -2px 0 10px var(--shadow);
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-}
-
 /* Ensure images are responsive */
 img {
     max-width: 100%;
@@ -781,18 +628,6 @@ img {
 
 .tab-section.active {
     display: block;
-}
-
-/* Project Grid */
-.project-grid {
-    width: 100%;
-}
-
-/* Project Cards */
-.project-cards {
-    display: grid;
-    gap: 1.5rem;
-    width: 100%;
 }
 
 /* Project Links Container */
@@ -908,69 +743,6 @@ img {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .social-links {
-        gap: 1rem;
-    }
-
-    .social-link {
-        font-size: 0.9rem;
-    }
-
-    .footer {
-        padding: 1.5rem 0;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #inner {
-        padding: 1.5rem;
-    }
-
-    #hd {
-        padding: 2rem;
-        margin: -1.5rem -1.5rem 2rem -1.5rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .talent {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Responsive Design Improvements */
-@media screen and (max-width: 768px) {
-    .tab-navigation {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-    
-    .tab-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Utility Classes */
@@ -1169,28 +941,6 @@ img {
     white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-    .highlight-stats {
-        padding: 0.85rem;
-        gap: 0.4rem;
-        width: 100%;
-    }
-    
-    .stat-item {
-        padding: 0.3rem 0;
-        min-width: unset;
-    }
-
-    .stat-label {
-        font-size: 0.85rem;
-    }
-
-    .stat-number {
-        width: 28px;
-        height: 28px;
-    }
-}
-
 /* Icon styles */
 .privacy-icon {
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
@@ -1274,159 +1024,6 @@ img {
     background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
 }
 
-/* Handle desktop site on mobile browsers gracefully */
-@media screen and (max-width: 768px) and (min-width: 768px) {
-    /* Ensure minimum touch target sizes even in desktop mode */
-    button,
-    a,
-    select,
-    input[type="button"],
-    input[type="submit"] {
-        min-height: 36px;
-        min-width: 36px;
-        padding: 8px;
-        margin: 4px;
-    }
-
-    /* Prevent horizontal scrolling */
-    body {
-        overflow-x: hidden;
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-    }
-
-    /* Ensure content remains readable */
-    #doc2 {
-        min-width: 320px;
-        max-width: 100vw;
-        margin: 1rem auto;
-        padding: 0 10px;
-    }
-
-    /* Adjust grid layouts for better readability */
-    .yui-gc,
-    .project-cards,
-    .talent {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-
-    /* Ensure text remains readable */
-    p, li, td, th {
-        font-size: max(16px, 1em);
-        line-height: 1.5;
-        word-wrap: break-word;
-    }
-
-    /* Prevent fixed elements from covering content */
-    .nav-toggle,
-    .nav-menu {
-        position: absolute;
-    }
-
-    /* Ensure images don't overflow */
-    img {
-        max-width: 100vw;
-        object-fit: contain;
-    }
-
-    /* Improve form elements usability */
-    input, 
-    textarea, 
-    select {
-        font-size: 16px; /* Prevents iOS zoom on focus */
-        max-width: 100%;
-    }
-}
-
-/* Ensure minimum content width */
-@media screen and (min-width: 320px) {
-    #doc2 {
-        min-width: 320px;
-    }
-}
-
-/* Improved tab navigation for mobile */
-.tab-navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-}
-
-.tab-button {
-    flex: 1 1 auto;
-    min-width: 120px;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-@media screen and (max-width: 768px) {
-    /* Improved header layout */
-    .highlight-stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-    }
-
-    .stat-item {
-        text-align: center;
-        padding: 0.5rem;
-    }
-
-    /* Better job and certification layouts */
-    .job, .certification {
-        padding: 1.5rem;
-    }
-
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    /* Improve tech stack badges */
-    .tech-stack {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .tech-badge {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    /* Better education section layout */
-    .education {
-        text-align: left;
-        padding: 1rem;
-    }
-
-    /* Improved profile summary readability */
-    .profile-summary {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    .profile-summary ul {
-        padding-left: 1.5rem;
-    }
-
-    /* Better spacing for nested content */
-    .yui-gf {
-        margin-bottom: 2rem;
-    }
-
-    .yui-u.first h2 {
-        margin-bottom: 1rem;
-    }
-}
-
 /* Accessibility improvements */
 :focus {
     outline: 3px solid var(--accent);
@@ -1472,6 +1069,11 @@ img {
         content: " (" attr(href) ")";
         font-size: 0.9em;
     }
+}
+
+/* Ensure minimum width on all devices */
+#doc2 {
+    min-width: min(1024px, 100vw);
 }
 
 /* Desktop view override for mobile browsers */
@@ -1594,7 +1196,20 @@ img {
     }
 }
 
-/* Ensure minimum width on all devices */
-#doc2 {
-    min-width: min(1024px, 100vw);
+/* Improved tab navigation for desktop */
+.tab-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tab-button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
