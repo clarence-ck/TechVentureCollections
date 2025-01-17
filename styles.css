@@ -1630,3 +1630,158 @@ img {
         -webkit-overflow-scrolling: touch;
     }
 }
+
+/* Mobile Portrait with Desktop Site Optimizations */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    /* General text scaling */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* Header text adjustments */
+    h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    /* About Me section optimization */
+    .profile-summary {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding: 0.75rem;
+    }
+
+    .profile-summary p {
+        margin-bottom: 0.75rem;
+    }
+
+    .profile-summary ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .profile-summary li {
+        margin-bottom: 0.4rem;
+        line-height: 1.3;
+    }
+
+    /* Experience sections optimization */
+    .job {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .job-header {
+        margin-bottom: 0.5rem;
+    }
+
+    .job-header h2 {
+        font-size: 1rem;
+    }
+
+    .job-header h4 {
+        font-size: 0.85rem;
+    }
+
+    .job p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+
+    .job ul {
+        padding-left: 1.2rem;
+    }
+
+    .job li {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        margin-bottom: 0.4rem;
+    }
+
+    /* Skills and talents optimization */
+    .talent {
+        gap: 0.75rem;
+    }
+
+    .talent > div {
+        padding: 0.75rem;
+    }
+
+    .talent h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .talent p {
+        font-size: 0.85rem;
+        margin: 0.3rem 0;
+        line-height: 1.3;
+    }
+
+    /* Section headers */
+    .yui-u.first h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0;
+    }
+
+    /* Improved spacing */
+    .yui-gf {
+        margin-bottom: 1.5rem;
+    }
+
+    #inner {
+        padding: 0.75rem;
+    }
+
+    /* Tech badges optimization */
+    .tech-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        margin: 0.2rem;
+    }
+
+    .tech-stack {
+        gap: 0.4rem;
+    }
+
+    /* Certification adjustments */
+    .certification h3 {
+        font-size: 0.95rem;
+    }
+
+    .certification h4 {
+        font-size: 0.85rem;
+    }
+}
+
+/* Ensure minimum text size for readability */
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 13px;
+    }
+
+    .profile-summary,
+    .job p,
+    .job li,
+    .talent p {
+        font-size: 0.85rem;
+    }
+}
