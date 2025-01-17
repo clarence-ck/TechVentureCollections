@@ -854,11 +854,125 @@ h2 {
     }
 }
 
-/* Touch Device Optimizations */
-@media (hover: none) {
-    .project-card:hover,
+/* Base styles for desktop view */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+    }
+
+    .yui-gc {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .highlight-stats {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .talent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hover effects only for desktop */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
     .tab-button:hover {
+        background: var(--accent);
+        color: white;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 1024px) {
+    #doc2 {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    #inner {
+        padding: 1.5rem;
+    }
+
+    #hd {
+        padding: 2rem;
+        margin: -1.5rem -1.5rem 2rem -1.5rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .highlight-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .talent {
+        grid-template-columns: 1fr;
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-navigation {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .tab-button {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 120px;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .job {
+        padding: 1.5rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .project-card:hover,
+    .tab-button:hover,
+    .job:hover {
         transform: none;
+    }
+
+    .tab-button {
+        -webkit-tap-highlight-color: transparent;
     }
 
     .tab-button:active {
@@ -871,108 +985,6 @@ h2 {
 @supports (-webkit-touch-callout: none) {
     #doc2 {
         -webkit-text-size-adjust: 100%;
-    }
-}
-
-/* Base styles for desktop site toggle compatibility */
-@media screen and (min-width: 1025px) {
-    #doc2 {
-        min-width: 320px;
-        width: 100%;
-        max-width: 1140px;
-    }
-
-    .yui-gc {
-        min-width: 300px;
-    }
-}
-
-/* Ensure minimum content width for desktop site toggle */
-@media screen and (max-width: 1024px) {
-    html {
-        min-width: 320px;
-    }
-
-    body {
-        min-width: 320px;
-        overflow-x: hidden;
-    }
-
-    #doc2 {
-        min-width: 320px;
-        width: 95%;
-        margin: 1rem auto;
-    }
-
-    .yui-gc, .yui-gf {
-        min-width: 300px;
-    }
-
-    /* Prevent text from becoming too small */
-    h1 {
-        font-size: clamp(24px, 3vw, 48px);
-    }
-
-    h2 {
-        font-size: clamp(16px, 2vw, 32px);
-    }
-
-    p, li {
-        font-size: clamp(14px, 1.5vw, 24px);
-    }
-}
-
-/* Ensure proper scaling for desktop site toggle */
-@supports (-webkit-touch-callout: none) {
-    /* iOS-specific fixes */
-    #doc2 {
-        width: 95%;
-        max-width: 1140px;
-        margin: 1rem auto;
-        -webkit-text-size-adjust: 100%;
-    }
-}
-
-/* Prevent overflow issues */
-.project-cards, .talent, .highlight-stats {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Ensure minimum touch target sizes */
-.tab-button, .tech-badge, .job {
-    min-height: 44px;
-    min-width: 44px;
-}
-
-/* Prevent content from becoming too compressed */
-@media screen and (max-width: 1024px) {
-    .project-card, .job, .talent > div {
-        min-width: 280px;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .tech-badge {
-        min-width: auto;
-        white-space: nowrap;
-    }
-}
-
-/* Ensure proper scaling in desktop site mode */
-@media screen and (min-width: 1025px) {
-    body {
-        zoom: 1;
-        transform: scale(1);
-        -moz-transform: scale(1);
-        transform-origin: 0 0;
-        -moz-transform-origin: 0 0;
     }
 }
 
@@ -2506,4 +2518,977 @@ h2 {
     flex: 1;
     white-space: normal;
     overflow-wrap: break-word;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .highlight-stats {
+        padding: 0.85rem;
+        gap: 0.4rem;
+        width: 100%;
+    }
+    
+    .stat-item {
+        padding: 0.3rem 0;
+        min-width: unset;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-line-clamp: 2;
+        -moz-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .stat-number {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Icon styles */
+.privacy-icon {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.privacy-icon::before {
+    background: radial-gradient(circle at 30% 30%, #93c5fd, transparent 70%);
+}
+
+.data-icon {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.data-icon::before {
+    background: radial-gradient(circle at 30% 30%, #6ee7b7, transparent 70%);
+}
+
+.cloud-icon {
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+}
+
+.cloud-icon::before {
+    background: radial-gradient(circle at 30% 30%, #a5b4fc, transparent 70%);
+}
+
+.ai-icon {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.ai-icon::before {
+    background: radial-gradient(circle at 30% 30%, #f9a8d4, transparent 70%);
+}
+
+.growth-icon {
+    background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+.growth-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fdba74, transparent 70%);
+}
+
+/* Refined hover effect */
+.stat-item:hover .stat-number::before {
+    opacity: 0.4;
+}
+
+.stat-item:hover .stat-number i {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+}
+
+.automation-icon {
+    background: linear-gradient(135deg, #eab308, #a16207);
+}
+
+.automation-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fde047, transparent 70%);
+}
+
+.insight-icon {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.insight-icon::before {
+    background: radial-gradient(circle at 30% 30%, #c4b5fd, transparent 70%);
+}
+
+.mindset-icon {
+    background: linear-gradient(135deg, #f59e0b, #92400e);
+}
+
+.mindset-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fbbf24, transparent 70%);
+}
+
+.lightbulb-icon {
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+
+.lightbulb-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .project-card:hover,
+    .tab-button:hover,
+    .job:hover {
+        transform: none;
+    }
+
+    .tab-button:active {
+        background: var(--accent);
+        color: white;
+    }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    #doc2 {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Base styles for desktop site toggle compatibility */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        min-width: 320px;
+        width: 100%;
+        max-width: 1140px;
+    }
+
+    .yui-gc {
+        min-width: 300px;
+    }
+}
+
+/* Ensure minimum content width for desktop site toggle */
+@media screen and (max-width: 1024px) {
+    html {
+        min-width: 320px;
+    }
+
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    #doc2 {
+        min-width: 320px;
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .yui-gc, .yui-gf {
+        min-width: 300px;
+    }
+
+    /* Prevent text from becoming too small */
+    h1 {
+        font-size: clamp(24px, 3vw, 48px);
+    }
+
+    h2 {
+        font-size: clamp(16px, 2vw, 32px);
+    }
+
+    p, li {
+        font-size: clamp(14px, 1.5vw, 24px);
+    }
+}
+
+/* Ensure proper scaling for desktop site toggle */
+@supports (-webkit-touch-callout: none) {
+    /* iOS-specific fixes */
+    #doc2 {
+        width: 95%;
+        max-width: 1140px;
+        margin: 1rem auto;
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Prevent overflow issues */
+.project-cards, .talent, .highlight-stats {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure minimum touch target sizes */
+.tab-button, .tech-badge, .job {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Prevent content from becoming too compressed */
+@media screen and (max-width: 1024px) {
+    .project-card, .job, .talent > div {
+        min-width: 280px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        min-width: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Ensure proper scaling in desktop site mode */
+@media screen and (min-width: 1025px) {
+    body {
+        zoom: 1;
+        transform: scale(1);
+        -moz-transform: scale(1);
+        transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+    }
+}
+
+/* Utility Classes */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: white;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+/* Tech Stack Badges */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding-left: 0.125rem;
+    width: 100%;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.625rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    line-height: 1;
+    white-space: nowrap;
+    min-width: max-content;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-badge i {
+    font-size: 1rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tech-badge img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+/* Data Engineering badges - Azure/Database blue theme */
+.project-card[data-project="data-engineering"] .tech-badge {
+    background: linear-gradient(to right, rgba(0, 120, 212, 0.08), transparent);
+}
+
+/* Privacy badges - Deep purple for security/trust */
+.project-card[data-project="privacy"] .tech-badge {
+    background: linear-gradient(to right, rgba(75, 0, 130, 0.08), transparent);
+}
+
+/* Automation badges - Emerald green for efficiency */
+.project-card[data-project="automation"] .tech-badge {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.08), transparent);
+}
+
+/* Visual badges - Coral orange for creativity */
+.project-card[data-project="visual"] .tech-badge {
+    background: linear-gradient(to right, rgba(251, 113, 133, 0.08), transparent);
+}
+
+/* Flight Info badges - Aviation blue theme */
+.project-card[data-project="flight-info"] .tech-badge {
+    background: linear-gradient(to right, rgba(43, 87, 151, 0.08), transparent);
+}
+
+/* Common hover transitions */
+.profile-summary,
+.project-card,
+.job,
+.tech-badge {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-summary:hover,
+.project-card:hover,
+.job:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Project Card Gradient Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.project-card:hover::before,
+.job:hover::before,
+.certification .job:hover::before,
+.profile-summary:hover::before {
+    animation: gradient-shift 2s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-light);
+}
+
+/* Statistics Section */
+.highlight-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.35rem 0;
+    transition: transform 0.3s ease;
+    width: 100%;
+    min-width: 250px;
+}
+
+.stat-item:hover {
+    transform: translateX(5px);
+}
+
+.stat-number {
+    font-size: 1rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.stat-label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+    text-align: left;
+    flex: 1;
+    white-space: normal;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .highlight-stats {
+        padding: 0.85rem;
+        gap: 0.4rem;
+        width: 100%;
+    }
+    
+    .stat-item {
+        padding: 0.3rem 0;
+        min-width: unset;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-line-clamp: 2;
+        -moz-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .stat-number {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Icon styles */
+.privacy-icon {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.privacy-icon::before {
+    background: radial-gradient(circle at 30% 30%, #93c5fd, transparent 70%);
+}
+
+.data-icon {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.data-icon::before {
+    background: radial-gradient(circle at 30% 30%, #6ee7b7, transparent 70%);
+}
+
+.cloud-icon {
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+}
+
+.cloud-icon::before {
+    background: radial-gradient(circle at 30% 30%, #a5b4fc, transparent 70%);
+}
+
+.ai-icon {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.ai-icon::before {
+    background: radial-gradient(circle at 30% 30%, #f9a8d4, transparent 70%);
+}
+
+.growth-icon {
+    background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+.growth-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fdba74, transparent 70%);
+}
+
+/* Refined hover effect */
+.stat-item:hover .stat-number::before {
+    opacity: 0.4;
+}
+
+.stat-item:hover .stat-number i {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+}
+
+.automation-icon {
+    background: linear-gradient(135deg, #eab308, #a16207);
+}
+
+.automation-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fde047, transparent 70%);
+}
+
+.insight-icon {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.insight-icon::before {
+    background: radial-gradient(circle at 30% 30%, #c4b5fd, transparent 70%);
+}
+
+.mindset-icon {
+    background: linear-gradient(135deg, #f59e0b, #92400e);
+}
+
+.mindset-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fbbf24, transparent 70%);
+}
+
+.lightbulb-icon {
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+
+.lightbulb-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .project-card:hover,
+    .tab-button:hover,
+    .job:hover {
+        transform: none;
+    }
+
+    .tab-button:active {
+        background: var(--accent);
+        color: white;
+    }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    #doc2 {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Base styles for desktop site toggle compatibility */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        min-width: 320px;
+        width: 100%;
+        max-width: 1140px;
+    }
+
+    .yui-gc {
+        min-width: 300px;
+    }
+}
+
+/* Ensure minimum content width for desktop site toggle */
+@media screen and (max-width: 1024px) {
+    html {
+        min-width: 320px;
+    }
+
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    #doc2 {
+        min-width: 320px;
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .yui-gc, .yui-gf {
+        min-width: 300px;
+    }
+
+    /* Prevent text from becoming too small */
+    h1 {
+        font-size: clamp(24px, 3vw, 48px);
+    }
+
+    h2 {
+        font-size: clamp(16px, 2vw, 32px);
+    }
+
+    p, li {
+        font-size: clamp(14px, 1.5vw, 24px);
+    }
+}
+
+/* Ensure proper scaling for desktop site toggle */
+@supports (-webkit-touch-callout: none) {
+    /* iOS-specific fixes */
+    #doc2 {
+        width: 95%;
+        max-width: 1140px;
+        margin: 1rem auto;
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Prevent overflow issues */
+.project-cards, .talent, .highlight-stats {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure minimum touch target sizes */
+.tab-button, .tech-badge, .job {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Prevent content from becoming too compressed */
+@media screen and (max-width: 1024px) {
+    .project-card, .job, .talent > div {
+        min-width: 280px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        min-width: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Ensure proper scaling in desktop site mode */
+@media screen and (min-width: 1025px) {
+    body {
+        zoom: 1;
+        transform: scale(1);
+        -moz-transform: scale(1);
+        transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+    }
+}
+
+/* Utility Classes */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: white;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+/* Tech Stack Badges */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding-left: 0.125rem;
+    width: 100%;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.625rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    line-height: 1;
+    white-space: nowrap;
+    min-width: max-content;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-badge i {
+    font-size: 1rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tech-badge img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+/* Data Engineering badges - Azure/Database blue theme */
+.project-card[data-project="data-engineering"] .tech-badge {
+    background: linear-gradient(to right, rgba(0, 120, 212, 0.08), transparent);
+}
+
+/* Privacy badges - Deep purple for security/trust */
+.project-card[data-project="privacy"] .tech-badge {
+    background: linear-gradient(to right, rgba(75, 0, 130, 0.08), transparent);
+}
+
+/* Automation badges - Emerald green for efficiency */
+.project-card[data-project="automation"] .tech-badge {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.08), transparent);
+}
+
+/* Visual badges - Coral orange for creativity */
+.project-card[data-project="visual"] .tech-badge {
+    background: linear-gradient(to right, rgba(251, 113, 133, 0.08), transparent);
+}
+
+/* Flight Info badges - Aviation blue theme */
+.project-card[data-project="flight-info"] .tech-badge {
+    background: linear-gradient(to right, rgba(43, 87, 151, 0.08), transparent);
+}
+
+/* Common hover transitions */
+.profile-summary,
+.project-card,
+.job,
+.tech-badge {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-summary:hover,
+.project-card:hover,
+.job:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Project Card Gradient Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.project-card:hover::before,
+.job:hover::before,
+.certification .job:hover::before,
+.profile-summary:hover::before {
+    animation: gradient-shift 2s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-light);
+}
+
+/* Statistics Section */
+.highlight-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.35rem 0;
+    transition: transform 0.3s ease;
+    width: 100%;
+    min-width: 250px;
+}
+
+.stat-item:hover {
+    transform: translateX(5px);
+}
+
+.stat-number {
+    font-size: 1rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.stat-label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+    text-align: left;
+    flex: 1;
+    white-space: normal;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .highlight-stats {
+        padding: 0.85rem;
+        gap: 0.4rem;
+        width: 100%;
+    }
+    
+    .stat-item {
+        padding: 0.3rem 0;
+        min-width: unset;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-line-clamp: 2;
+        -moz-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .stat-number {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Icon styles */
+.privacy-icon {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.privacy-icon::before {
+    background: radial-gradient(circle at 30% 30%, #93c5fd, transparent 70%);
+}
+
+.data-icon {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.data-icon::before {
+    background: radial-gradient(circle at 30% 30%, #6ee7b7, transparent 70%);
+}
+
+.cloud-icon {
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+}
+
+.cloud-icon::before {
+    background: radial-gradient(circle at 30% 30%, #a5b4fc, transparent 70%);
+}
+
+.ai-icon {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.ai-icon::before {
+    background: radial-gradient(circle at 30% 30%, #f9a8d4, transparent 70%);
+}
+
+.growth-icon {
+    background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+.growth-icon::before {
+    background: radial-gradient(circle at 30% 30%, #fdba74, transparent 70%);
 }
