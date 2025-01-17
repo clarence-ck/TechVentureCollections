@@ -108,27 +108,45 @@ h2 {
 /* Skills Section */
 .talent {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .talent > div {
     background: var(--bg-secondary);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 0; /* Prevents overflow in grid items */
 }
 
 .talent h2 {
     color: var(--accent);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+}
+
+.talent h2 i {
+    color: var(--accent);
     font-size: 1.25rem;
+    flex-shrink: 0;
 }
 
 .talent p {
     color: var(--text-secondary);
-    margin: 0.5rem 0;
+    margin: 0.75rem 0;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Project Grid */
