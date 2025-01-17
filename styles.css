@@ -763,16 +763,6 @@ img {
     animation: fadeOut 0.3s ease-out forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
 /* Utility Classes */
 .badge {
     display: inline-block;
@@ -1045,28 +1035,6 @@ img {
 }
 
 /* Print styles */
-@media print {
-    #doc2 {
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .tab-navigation {
-        display: none;
-    }
-
-    .tab-section {
-        display: block !important;
-        opacity: 1 !important;
-    }
-
-    a[href^="http"]::after {
-        content: " (" attr(href) ")";
-        font-size: 0.9em;
-    }
-}
-
 /* Ensure minimum width on all devices */
 #doc2 {
     min-width: min(1024px, 100vw);
