@@ -1371,7 +1371,7 @@ img {
     .highlight-stats {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 0.75rem;
+        gap: 1rem;
     }
 
     .stat-item {
@@ -1474,332 +1474,127 @@ img {
     }
 }
 
-/* Portrait Mode Optimizations */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    #doc2 {
-        width: 98vw;
-        margin: 0.5rem auto;
-        padding: 0.5rem;
-    }
-
-    #inner {
-        padding: 1rem;
-    }
-
-    /* Header adjustments for portrait */
-    #hd {
-        padding: 1.5rem;
-        margin: -1rem -1rem 1.5rem -1rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-    }
-
-    /* Optimize stats display */
+/* Desktop view override for mobile browsers */
+@media screen and (min-width: 1024px), 
+       screen and (min-device-width: 1024px),
+       screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    /* Reset mobile-specific layouts */
     .highlight-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-    }
-
-    /* Project cards in portrait */
-    .project-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-card {
-        margin: 0;
-        width: 100%;
-    }
-
-    /* Adjust text sizes for readability */
-    h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-        line-height: 1.4;
-    }
-
-    /* Optimize tab navigation */
-    .tab-navigation {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.5rem;
-        margin: 0 -0.5rem;
-        padding: 0 0.5rem;
-    }
-
-    .tab-button {
-        flex: 0 0 auto;
-        padding: 0.5rem 1rem;
-    }
-}
-
-/* Landscape Mode Optimizations */
-@media screen and (max-width: 768px) and (orientation: landscape) {
-    #doc2 {
-        width: 95vw;
-        max-width: none;
-        margin: 0.5rem auto;
-    }
-
-    /* Two-column layout for better width utilization */
-    .yui-gc {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
         gap: 1.5rem;
     }
 
-    /* Optimize project cards for landscape */
+    .stat-item {
+        flex: 0 1 auto;
+        text-align: left;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Restore desktop grid layouts */
+    .yui-gc {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+
     .project-cards {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
     }
 
-    /* Adjust header for landscape */
-    #hd {
-        padding: 2rem;
-    }
-
-    .highlight-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-
-    /* Optimize talent section */
     .talent {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
     }
 
-    /* Better tab navigation in landscape */
-    .tab-navigation {
+    /* Restore desktop text sizes */
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .profile-summary {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    /* Restore desktop spacing */
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+        padding: 0;
+    }
+
+    #inner {
+        padding: 3rem;
+    }
+
+    #hd {
+        padding: 3rem;
+        margin: -3rem -3rem 3rem -3rem;
+    }
+
+    /* Restore desktop job and certification layouts */
+    .job-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .tech-stack {
+        display: flex;
         flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .tech-badge {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Force desktop navigation style */
+    .tab-navigation {
+        display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 1rem;
+        margin: 2rem 0;
     }
 
     .tab-button {
         flex: 0 1 auto;
-        min-width: 100px;
-    }
-}
-
-/* Common improvements for both orientations */
-@media screen and (max-width: 768px) {
-    /* Ensure content doesn't overflow */
-    img, video, iframe {
-        max-width: 100%;
-        height: auto;
+        min-width: auto;
+        max-width: none;
+        padding: 0.75rem 1.5rem;
     }
 
-    /* Improve touch targets */
-    .tech-badge,
-    .tab-button,
-    a {
-        padding: 0.8rem;
-        margin: 0.2rem;
-    }
-
-    /* Better table handling */
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* Prevent text overflow */
-    h1, h2, h3, h4, p {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -ms-word-break: break-all;
-        word-break: break-word;
-        -ms-hyphens: auto;
-        -moz-hyphens: auto;
-        -webkit-hyphens: auto;
-        hyphens: auto;
-    }
-
-    /* Optimize scrolling */
-    * {
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* Base Mobile Optimizations */
-@media screen and (max-width: 768px) {
-    /* Performance optimizations */
-    * {
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Font size optimizations */
-    html {
-        font-size: 16px; /* Base font size */
-    }
-
+    /* Ensure proper scrolling behavior */
     body {
-        font-size: 1rem;
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
         overflow-x: hidden;
-        width: 100%;
-    }
-
-    /* Container adjustments */
-    #doc2 {
-        width: calc(100% - 1rem);
-        margin: 0.5rem;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    #inner {
-        padding: 1rem;
-    }
-
-    /* Header optimizations */
-    #hd {
-        padding: 1.5rem;
-        margin: -1rem -1rem 1.5rem -1rem;
-        border-radius: 15px 15px 0 0;
-    }
-
-    .yui-gc {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    /* Typography scaling */
-    h1 {
-        font-size: clamp(1.75rem, 4vw, 2.25rem);
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-    }
-
-    h2 {
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        line-height: 1.4;
-    }
-
-    /* Navigation improvements */
-    .tab-navigation {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: var(--bg-primary);
-        padding: 0.75rem 0.5rem;
-        margin: -0.5rem -0.5rem 1rem -0.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
     }
 
-    .tab-navigation::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
+    /* Maintain desktop hover effects */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px var(--shadow);
     }
 
-    .tab-button {
-        flex: 0 0 auto;
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-        white-space: nowrap;
-        border-radius: 8px;
-        margin: 0 0.25rem;
-        min-height: 44px;
-    }
-
-    /* Content sections */
-    .yui-gf {
-        margin-bottom: 2rem;
-    }
-
-    /* Project cards */
-    .project-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-card {
-        padding: 1.25rem;
-        padding-left: 1.5rem;
-        margin: 0;
-        border-radius: 12px;
-    }
-
-    /* Skills section */
-    .talent {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .talent > div {
-        padding: 1.25rem;
-        border-radius: 12px;
-    }
-
-    /* Tech stack improvements */
-    .tech-stack {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-    }
-
+    /* Force desktop-style touch targets */
+    button,
+    a,
     .tech-badge {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.8rem;
-        border-radius: 6px;
-        background: rgba(0, 0, 0, 0.04);
-        min-height: 36px;
-        display: inline-flex;
-        align-items: center;
+        cursor: pointer;
+        touch-action: manipulation;
     }
+}
 
-    /* Touch interactions */
-    @media (hover: none) {
-        .project-card:active,
-        .tab-button:active,
-        .tech-badge:active {
-            transform: scale(0.98);
-            transition: transform 0.1s ease;
-            opacity: 0.9;
-        }
-    }
-
-    /* Performance optimizations */
-    @media (prefers-reduced-data: reduce) {
-        img {
-            image-rendering: auto;
-            max-width: 100%;
-        }
-
-        [style*="background-image"] {
-            background-size: cover;
-            background-position: center;
-        }
-
-        @supports (font-variation-settings: normal) {
-            body {
-                font-variation-settings: 'wght' 400;
-            }
-        }
-    }
-
-    /* Smooth scrolling */
-    @media (prefers-reduced-motion: no-preference) {
-        html {
-            scroll-behavior: smooth;
-        }
-    }
+/* Ensure minimum width on all devices */
+#doc2 {
+    min-width: min(1024px, 100vw);
 }
