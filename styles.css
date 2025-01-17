@@ -661,6 +661,109 @@ h2 {
     }
 }
 
+/* Base content styles for better scaling */
+.profile-summary, .job, .project-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.profile-summary p, .job p, .project-card p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.profile-summary ul, .job ul {
+    max-width: 100%;
+    padding-right: 1rem;
+}
+
+.profile-summary ul li, .job ul li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Desktop site override improvements */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+    
+    .yui-gc {
+        grid-template-columns: 2fr 1fr;
+        max-width: 100%;
+    }
+
+    /* Content scaling for desktop view on mobile */
+    .profile-summary, .job, .project-card {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure text content stays within bounds */
+    .profile-summary p, .job p, .project-card p,
+    .profile-summary ul, .job ul, .project-card ul {
+        font-size: calc(14px + 0.2vw); /* Responsive font size */
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    /* Adjust list padding for better mobile viewing */
+    .profile-summary ul, .job ul {
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+    }
+
+    /* Handle long words and URLs */
+    a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+
+    /* Ensure tech stack badges wrap properly */
+    .tech-stack {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Force content to stay within viewport on mobile desktop site */
+@media screen and (max-width: 768px) and (min-width: 1025px) {
+    #inner {
+        padding: 1rem;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .profile-summary, .job, .project-card {
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .profile-summary p, .job p, .project-card p,
+    .profile-summary ul, .job ul, .project-card ul {
+        font-size: 14px; /* Fixed size for readability */
+    }
+
+    .tech-badge {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
 /* Tab Container */
 #yui-main {
     position: relative;
