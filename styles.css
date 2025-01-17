@@ -1273,3 +1273,77 @@ img {
 .lightbulb-icon::before {
     background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
 }
+
+/* Handle desktop site on mobile browsers gracefully */
+@media screen and (max-width: 768px) and (min-width: 768px) {
+    /* Ensure minimum touch target sizes even in desktop mode */
+    button,
+    a,
+    select,
+    input[type="button"],
+    input[type="submit"] {
+        min-height: 36px;
+        min-width: 36px;
+        padding: 8px;
+        margin: 4px;
+    }
+
+    /* Prevent horizontal scrolling */
+    body {
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    /* Ensure content remains readable */
+    #doc2 {
+        min-width: 320px;
+        max-width: 100vw;
+        margin: 1rem auto;
+        padding: 0 10px;
+    }
+
+    /* Adjust grid layouts for better readability */
+    .yui-gc,
+    .project-cards,
+    .talent {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Ensure text remains readable */
+    p, li, td, th {
+        font-size: max(16px, 1em);
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+
+    /* Prevent fixed elements from covering content */
+    .nav-toggle,
+    .nav-menu {
+        position: absolute;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100vw;
+        object-fit: contain;
+    }
+
+    /* Improve form elements usability */
+    input, 
+    textarea, 
+    select {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        max-width: 100%;
+    }
+}
+
+/* Ensure minimum content width */
+@media screen and (min-width: 320px) {
+    #doc2 {
+        min-width: 320px;
+    }
+}
