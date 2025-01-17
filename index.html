@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>Clarence Sai | Resume | Portfolio</title>
+    <meta name="theme-color" content="#0088ff">
     <meta property="og:title" content="Clarence Sai - Data Enthusiast, Citizen Developer, AML Compliance Specialist">
     <meta property="og:description" content="Explore his portfolio: ICIJ FinCEN Files data analytics, RPA, PETs, cloud data engineering.">
-    <meta charset="utf-8">
     <meta name="description" content="Portfolio of Clarence Sai - Data Engineer and AML Compliance Specialist">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="doc2">
         <div id="inner">
-            <div id="hd">
+            <header id="hd">
                 <div class="profile-header">
                     <div class="profile-info">
                         <h1>Clarence Sai</h1>
@@ -23,45 +26,45 @@
                             Citizen Developer<br>
                             AML Compliance Specialist</h2>
                     </div>
-                    <div class="highlight-stats">
-                        <div class="stat-item">
-                            <span class="stat-number privacy-icon"><i class="fas fa-fingerprint"></i></span>
+                    <div class="highlight-stats" role="list">
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number privacy-icon" aria-hidden="true"><i class="fas fa-fingerprint"></i></span>
                             <span class="stat-label">Privacy Tech Innovator</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number data-icon"><i class="fas fa-database"></i></span>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number data-icon" aria-hidden="true"><i class="fas fa-database"></i></span>
                             <span class="stat-label">Treble Data Proficient</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number prompt-icon"><i class="fas fa-terminal"></i></span>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number prompt-icon" aria-hidden="true"><i class="fas fa-terminal"></i></span>
                             <span class="stat-label">Prompt Engineering</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number ai-icon"><i class="fas fa-microchip"></i></span>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number ai-icon" aria-hidden="true"><i class="fas fa-microchip"></i></span>
                             <span class="stat-label">Generative AI Practitioner</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number future-icon"><i class="fas fa-rocket"></i></span>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number future-icon" aria-hidden="true"><i class="fas fa-rocket"></i></span>
                             <span class="stat-label">Future-Oriented Learner</span>
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
 
-            <div id="nav">
-                <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showSection('about-me')">About Me</button>
-                    <button class="tab-button" onclick="showSection('projects')">Portfolio</button>
-                    <button class="tab-button" onclick="showSection('certifications')">Certifications</button>
-                    <button class="tab-button" onclick="showSection('tech-exp')">Tech Experience</button>
-                    <button class="tab-button" onclick="showSection('aml-exp')">AML Experience</button>
+            <nav id="nav" role="navigation">
+                <div class="tab-buttons" role="tablist">
+                    <button class="tab-button active" role="tab" aria-selected="true" aria-controls="about-me" onclick="showSection('about-me')">About Me</button>
+                    <button class="tab-button" role="tab" aria-selected="false" aria-controls="projects" onclick="showSection('projects')">Portfolio</button>
+                    <button class="tab-button" role="tab" aria-selected="false" aria-controls="certifications" onclick="showSection('certifications')">Certifications</button>
+                    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tech-exp" onclick="showSection('tech-exp')">Tech Experience</button>
+                    <button class="tab-button" role="tab" aria-selected="false" aria-controls="aml-exp" onclick="showSection('aml-exp')">AML Experience</button>
                 </div>
-            </div>
+            </nav>
 
-            <div id="bd">
+            <main id="bd">
                 <div id="yui-main">
                     <div class="yui-b">
-                        <div id="about-me" class="tab-section active">
+                        <div id="about-me" class="tab-section active" role="tabpanel" aria-labelledby="about-me-tab">
                             <div class="section-container">
                                 <div class="section-header">
                                     <h2>About Me</h2>
@@ -143,7 +146,7 @@
                             </div>
                         </div>
 
-                        <div id="projects" class="tab-section">
+                        <div id="projects" class="tab-section" role="tabpanel" aria-labelledby="projects-tab">
                             <div class="project-grid">
                                 <div class="section-container">
                                     <div class="section-header">
@@ -296,7 +299,7 @@
                             </div>
                         </div>
 
-                        <div id="certifications" class="tab-section">
+                        <div id="certifications" class="tab-section" role="tabpanel" aria-labelledby="certifications-tab">
                             <div class="section-container">
                                 <div class="section-header">
                                     <h2>Certifications</h2>
@@ -403,7 +406,7 @@
                             </div>
                         </div>
 
-                        <div id="tech-exp" class="tab-section">
+                        <div id="tech-exp" class="tab-section" role="tabpanel" aria-labelledby="tech-exp-tab">
                             <div class="section-container">
                                 <div class="section-header">
                                     <h2>Tech Experience</h2>
@@ -479,7 +482,7 @@
                             </div>
                         </div>
 
-                        <div id="aml-exp" class="tab-section">
+                        <div id="aml-exp" class="tab-section" role="tabpanel" aria-labelledby="aml-exp-tab">
                             <div class="section-container">
                                 <div class="section-header">
                                     <h2>AML Compliance Experience</h2>
@@ -544,34 +547,68 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
 
             <script src="scripts.js"></script>
 
-            <footer id="ft" class="footer">
+            <footer id="ft" class="footer" role="contentinfo">
                 <div class="footer-content">
                     <div class="social-links">
-                        <a href="mailto:chinkai.ck@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
+                        <a href="mailto:chinkai.ck@gmail.com" class="social-link" aria-label="Email: chinkai.ck@gmail.com">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span class="link-text">Email</span>
                         </a>
-                        <a href="tel:+6596514817" class="social-link" aria-label="Contact">
-                            <i class="fas fa-phone"></i>
-                            <span>Contact</span>
+                        <a href="tel:+6596514817" class="social-link" aria-label="Phone: +65 9651 4817">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span class="link-text">Contact</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/clarence-sai-8a688452" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/clarence-sai-8a688452" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="link-text">LinkedIn</span>
                         </a>
-                        <a href="https://chatgpt.com/g/g-LuCfFjgkX-toto-singapore-pools-huat-ah" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT">
-                            <i class="fas fa-dice"></i>
-                            <span>Custom GPT</span>
+                        <a href="https://github.com/clarence-ck/NLB_Top100" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <a href="https://chatgpt.com/g/g-LuCfFjgkX-toto-singapore-pools-huat-ah" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Custom GPT Bot">
+                            <i class="fas fa-dice" aria-hidden="true"></i>
+                            <span class="link-text">Custom GPT</span>
                         </a>
                     </div>
-                    <p class="copyright"><i class="fas fa-copyright"></i> 2025 Clarence Sai. All rights reserved.</p>
+                    <p class="copyright">&copy; <span id="year">2024</span> Clarence Sai. All rights reserved.</p>
                 </div>
             </footer>
         </div>
     </div>
+
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Tab functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.tab-section').forEach(section => {
+                section.classList.remove('active');
+                section.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Deactivate all tabs
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+                button.setAttribute('aria-selected', 'false');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+            selectedSection.setAttribute('aria-hidden', 'false');
+            
+            // Activate selected tab
+            const selectedTab = document.querySelector(`[aria-controls="${sectionId}"]`);
+            selectedTab.classList.add('active');
+            selectedTab.setAttribute('aria-selected', 'true');
+        }
+    </script>
 </body>
 </html>
