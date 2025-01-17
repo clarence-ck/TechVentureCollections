@@ -657,6 +657,118 @@ h2 {
     }
 }
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #doc2 {
+        margin: 1rem;
+        border-radius: 15px;
+    }
+
+    #inner {
+        padding: 1.5rem;
+    }
+
+    #hd {
+        padding: 2rem;
+        margin: -1.5rem -1.5rem 2rem -1.5rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .talent {
+        grid-template-columns: 1fr;
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .project-card,
+    .job,
+    .talent > div,
+    button,
+    a {
+        min-height: 44px;
+        padding: 1.2rem;
+    }
+
+    .project-card,
+    .job {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Desktop Optimizations */
+@media screen and (min-width: 769px) {
+    .project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .talent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Hover effects only on desktop */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px var(--shadow);
+    }
+}
+
+/* Navigation Menu */
+.nav-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        padding: 0.8rem;
+        background: var(--accent);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background: var(--bg-primary);
+        padding: 2rem;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -2px 0 10px var(--shadow);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Tab Container */
 #yui-main {
     position: relative;
