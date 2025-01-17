@@ -1265,3 +1265,17 @@ img {
         flex-direction: column;
     }
 }
+
+/* Browser Recommendation Note */
+.browser-note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    opacity: 0.8;
+}
+
+.browser-note i {
+    margin: 0 0.3rem;
+    color: var(--accent);
+}
