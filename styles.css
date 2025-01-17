@@ -36,10 +36,12 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow);
     overflow: hidden;
+    padding: 0;
 }
 
 #inner {
     padding: 3rem;
+    overflow: visible;
 }
 
 /* Header Section */
@@ -80,7 +82,7 @@ h2 {
 
 /* Content Sections */
 .yui-gf {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position: relative;
 }
 
@@ -107,8 +109,8 @@ h2 {
 .talent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .talent > div {
@@ -136,17 +138,17 @@ h2 {
 
 /* Project Cards */
 .project-cards {
-    display: grid;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .project-card {
     background: var(--bg-secondary);
     border-radius: 0.5rem;
-    padding: 1.5rem;
-    padding-left: 2rem;
+    padding: 2rem;
+    padding-left: 2.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
@@ -201,8 +203,8 @@ h2 {
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 1rem 0;
+    gap: 1rem;
+    margin: 1.5rem 0;
     padding-left: 0.125rem;
     width: 100%;
 }
@@ -210,8 +212,8 @@ h2 {
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 1rem 0;
+    gap: 1rem;
+    margin: 1.5rem 0;
     padding-left: 0.125rem;
     width: 100%;
 }
@@ -495,13 +497,6 @@ h2 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.job-header.main-header h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0;
-}
-
 .job-header h2 {
     color: var(--accent);
     font-size: 1.25rem;
@@ -590,24 +585,34 @@ h2 {
 }
 
 .tab-button {
-    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
     border: none;
-    border-radius: 0.5rem;
-    background-color: #f3f4f6;
-    color: #4b5563;
-    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .tab-button:hover {
-    background-color: #e5e7eb;
-    transform: translateY(-1px);
+    background: var(--accent-light);
+    color: white;
 }
 
 .tab-button.active {
-    background-color: #2563eb;
+    background: var(--accent);
     color: white;
+}
+
+.tab-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.tab-button:active {
+    transform: translateY(1px);
 }
 
 /* Ensure images are responsive */
@@ -1108,8 +1113,8 @@ img {
     }
 
     .project-cards {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .talent {
@@ -1218,4 +1223,11 @@ img {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 769px) {
+    .project-cards {
+        display: flex;
+        flex-direction: column;
+    }
 }
