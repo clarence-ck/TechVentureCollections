@@ -143,13 +143,48 @@ h2 {
 
 .project-card {
     background: var(--bg-secondary);
-    border-radius: 0.5rem;
+    border-radius: 15px;
     padding: 1.5rem;
     padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card h3 {
+    color: var(--accent);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.project-header {
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.project-card a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--bg-primary);
+}
+
+.project-card a:hover {
+    background: var(--accent);
+    color: white;
 }
 
 .project-card::before {
@@ -185,16 +220,6 @@ h2 {
 .project-card[data-project="flight-info"]::before {
     background: linear-gradient(135deg, #2B5797, #01d93b71, #2B5797);
     background-size: 100% 200%;
-}
-
-.project-header {
-    margin-bottom: 1rem;
-}
-
-.project-header h3 {
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-    font-size: 1.25rem;
 }
 
 .tech-stack {
@@ -247,81 +272,6 @@ h2 {
     width: 1rem;
     height: 1rem;
     object-fit: contain;
-}
-
-.project-card .content {
-    padding: 1.5rem;
-}
-
-.project-card h3 {
-    margin-bottom: 0.75rem;
-}
-
-/* Projects Section */
-.project-card {
-    background: var(--bg-secondary);
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border);
-}
-
-.project-card h3 {
-    color: var(--accent);
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-}
-
-.project-card a {
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    background: var(--bg-primary);
-}
-
-.project-card a:hover {
-    background: var(--accent);
-    color: white;
-}
-
-/* Project Highlights */
-.project-highlight {
-    margin: 0.5rem 0;
-    padding-left: 2rem;
-    color: var(--text-primary);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-indent: -1rem;
-    white-space: normal;
-    overflow-wrap: break-word;
-}
-
-.project-highlight:last-of-type {
-    margin-bottom: 1rem;
-}
-
-/* Project List */
-.project-list {
-    margin: 0.5rem 0 1rem 0;
-    padding-left: 2.5rem;
-    list-style: none;
-}
-
-.project-list li {
-    position: relative;
-    padding: 0.25rem 0;
-    line-height: 1.5;
-}
-
-.project-list li::before {
-    content: "•";
-    position: absolute;
-    left: -1.5rem;
 }
 
 /* Profile Summary Card */
@@ -494,13 +444,6 @@ h2 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.job-header.main-header h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0;
-}
-
 .job-header h2 {
     color: var(--accent);
     font-size: 1.25rem;
@@ -558,52 +501,6 @@ h2 {
     color: var(--text-secondary);
 }
 
-.experience-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.experience-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0;
-}
-
-.experience-duration {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .experience-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .experience-title {
-        font-size: 1.35rem;
-    }
-    
-    .experience-duration {
-        font-size: 0.9rem;
-    }
-    
-    .job-header.main-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .job-header.main-header h2 {
-        font-size: 1.35rem;
-    }
-}
-
 /* Tab Navigation Styles */
 .tab-navigation {
     display: flex;
@@ -634,26 +531,133 @@ h2 {
 }
 
 /* Responsive Design Improvements */
+@media screen and (max-width: 1024px) {
+    #doc2 {
+        margin: 1rem;
+        max-width: none;
+    }
+    
+    #inner {
+        padding: 2rem;
+    }
+    
+    #hd {
+        margin: -2rem -2rem 2rem -2rem;
+        padding: 2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .talent {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+    
     .tab-navigation {
-        display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        justify-content: center;
     }
     
     .tab-button {
-        padding: 0.5rem 1rem;
+        flex: 1 1 calc(50% - 0.5rem);
+        white-space: nowrap;
+        padding: 0.75rem;
         font-size: 0.9rem;
     }
+    
+    .tech-stack {
+        gap: 0.5rem;
+    }
+    
+    .tech-badge {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
 
-    .yui-gc {
-        grid-template-columns: 1fr;
+@media screen and (max-width: 480px) {
+    #inner {
+        padding: 1rem;
+    }
+    
+    #hd {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+    }
+    
+    .tab-button {
+        flex: 1 1 100%;
+    }
+    
+    .project-card, .job {
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    #doc2 {
+        margin: 0.5rem;
+    }
+    
+    #inner {
+        padding: 1rem;
+    }
+    
+    #hd {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1rem;
+    }
+    
+    .tab-navigation {
+        position: sticky;
+        top: 0;
+        background: var(--bg-primary);
+        z-index: 100;
+        padding: 0.5rem 0;
+    }
+    
+    .project-cards, .certification {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
     }
+}
 
+/* Desktop Site Override */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+    }
+    
+    .yui-gc {
+        grid-template-columns: 2fr 1fr;
+    }
+    
     .project-cards {
         grid-template-columns: 1fr;
+    }
+    
+    .tab-navigation {
+        flex-wrap: nowrap;
     }
 }
 
