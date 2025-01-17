@@ -211,8 +211,6 @@ h2 {
     flex-wrap: wrap;
     gap: 0.75rem;
     margin: 1rem 0;
-    padding-left: 0.125rem;
-    width: 100%;
 }
 
 .tech-badge {
@@ -578,30 +576,6 @@ h2 {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .experience-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .experience-title {
-        font-size: 1.35rem;
-    }
-    
-    .experience-duration {
-        font-size: 0.9rem;
-    }
-    
-    .job-header.main-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-    }
-    
-    .job-header.main-header h2 {
-        font-size: 1.35rem;
-    }
 }
 
 /* Tab Navigation Styles */
@@ -1422,5 +1396,213 @@ h2 {
     .certification h3 {
         font-size: 1rem;
         white-space: normal !important;
+    }
+}
+
+/* ============================
+   1. MOBILE STYLES (Portrait and Landscape)
+   When desktop site is NOT selected
+   ============================ */
+@media screen and (max-width: 1024px) {
+    #doc2 {
+        width: 95%;
+        max-width: 100%;
+        margin: 1rem auto;
+        padding: 0;
+    }
+
+    #inner {
+        padding: 1rem;
+    }
+
+    #hd {
+        padding: 1.5rem;
+        margin: -1rem -1rem 1.5rem -1rem;
+    }
+
+    .yui-gc {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: clamp(24px, 6vw, 36px);
+    }
+
+    h2 {
+        font-size: clamp(16px, 4vw, 24px);
+    }
+
+    .highlight-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .tab-navigation {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tab-button {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-height: 44px;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .talent {
+        grid-template-columns: 1fr;
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Portrait Specific */
+    @media screen and (orientation: portrait) {
+        .highlight-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .tab-button {
+            flex: 1 1 100%;
+        }
+    }
+
+    /* Mobile Landscape Specific */
+    @media screen and (orientation: landscape) {
+        #inner {
+            padding: 1.5rem;
+        }
+
+        .highlight-stats {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .talent {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/* ============================
+   2. MOBILE WITH DESKTOP SITE SELECTED
+   When desktop site IS selected
+   ============================ */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    html {
+        min-width: 1024px;
+    }
+
+    body {
+        min-width: 1024px;
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        overflow-x: hidden;
+    }
+
+    #doc2 {
+        width: 1140px;
+        max-width: none;
+        margin: 2rem auto;
+        transform: none;
+    }
+
+    .yui-gc {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .highlight-stats {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .talent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ensure touch targets remain accessible */
+    .tab-button, .tech-badge {
+        min-height: 44px;
+        padding: 1rem;
+    }
+}
+
+/* ============================
+   3. DESKTOP STYLES
+   Regular desktop view
+   ============================ */
+@media screen and (min-width: 1025px) {
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+    }
+
+    .yui-gc {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .highlight-stats {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .talent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hover effects only for desktop */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-button:hover {
+        background: var(--accent);
+        color: white;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .project-card:hover,
+    .tab-button:hover {
+        transform: none;
+    }
+
+    .tab-button:active {
+        background: var(--accent);
+        color: white;
+    }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    #doc2 {
+        -webkit-text-size-adjust: 100%;
     }
 }
