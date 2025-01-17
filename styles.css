@@ -11,8 +11,6 @@
     --border: #dfe6e9;
     --shadow: rgba(0, 0, 0, 0.1);
     --gradient: linear-gradient(135deg, #0984e3, #00cec9);
-    --link-color: #337ab7;
-    --link-hover: #23527c;
     --bg-hover: #f7f7f7;
 }
 
@@ -78,6 +76,25 @@ h2 {
 /* Header Titles */
 #hd h1, #hd h2, #hd h3 {
     color: #ffffff;
+}
+
+.title-grid {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.title-item {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.2s;
+    padding: 0.25rem 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.title-item:hover {
+    color: rgba(255, 255, 255, 1);
 }
 
 /* Content Sections */
@@ -227,15 +244,6 @@ h2 {
     width: 100%;
 }
 
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1.5rem 0;
-    padding-left: 0.125rem;
-    width: 100%;
-}
-
 .tech-badge {
     display: inline-flex;
     align-items: center;
@@ -274,24 +282,9 @@ h2 {
     padding: 1.5rem;
 }
 
-.project-card h3 {
-    margin-bottom: 0.75rem;
-}
 
-/* Projects Section */
-.project-card {
-    background: var(--bg-secondary);
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border);
-}
 
-.project-card h3 {
-    color: var(--accent);
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-}
+
 
 .project-card a {
     color: var(--accent);
@@ -303,6 +296,7 @@ h2 {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     background: var(--bg-primary);
+    transition: all 0.2s ease;
 }
 
 .project-card a:hover {
@@ -442,12 +436,6 @@ h2 {
     background-size: 100% 200%;
 }
 
-/* Azure - Official Azure blue */
-.certification .job[data-cert="azure"]::before {
-    background: linear-gradient(135deg, #0078D4, #00B7C3, #0078D4);
-    background-size: 100% 200%;
-}
-
 /* Google - Official Google colors */
 .certification .job[data-cert="google"]::before {
     background: linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%);
@@ -503,6 +491,7 @@ h2 {
     width: 6px;
     background: linear-gradient(135deg, #0984e3, #00cec9); /* Match profile summary gradient */
     background-size: 100% 200%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Certification styles */
@@ -683,7 +672,7 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 0.625rem;
-    color: var(--link-color);
+    color: var(--accent);
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
@@ -702,7 +691,7 @@ img {
 }
 
 .project-link:hover {
-    color: var(--link-hover);
+    color: var(--accent-light);
     transform: translateY(-2px);
     background: var(--bg-hover);
 }
@@ -997,14 +986,6 @@ img {
     background: radial-gradient(circle at 30% 30%, #6ee7b7, transparent 70%);
 }
 
-.cloud-icon {
-    background: linear-gradient(135deg, #6366f1, #4338ca);
-}
-
-.cloud-icon::before {
-    background: radial-gradient(circle at 30% 30%, #a5b4fc, transparent 70%);
-}
-
 .ai-icon {
     background: linear-gradient(135deg, #ec4899, #be185d);
 }
@@ -1031,36 +1012,12 @@ img {
     transition: transform 0.2s ease;
 }
 
-.automation-icon {
-    background: linear-gradient(135deg, #eab308, #a16207);
-}
-
-.automation-icon::before {
-    background: radial-gradient(circle at 30% 30%, #fde047, transparent 70%);
-}
-
-.insight-icon {
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-}
-
-.insight-icon::before {
-    background: radial-gradient(circle at 30% 30%, #c4b5fd, transparent 70%);
-}
-
 .mindset-icon {
     background: linear-gradient(135deg, #f59e0b, #92400e);
 }
 
 .mindset-icon::before {
     background: radial-gradient(circle at 30% 30%, #fbbf24, transparent 70%);
-}
-
-.lightbulb-icon {
-    background: linear-gradient(135deg, #f59e0b, #b45309);
-}
-
-.lightbulb-icon::before {
-    background: radial-gradient(circle at 30% 30%, #fcd34d, transparent 70%);
 }
 
 /* Accessibility improvements */
@@ -1116,9 +1073,7 @@ img {
 }
 
 /* Desktop view override for mobile browsers */
-@media screen and (min-width: 1024px), 
-       screen and (min-device-width: 1024px),
-       screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (min-width: 1024px) {
     #doc2 {
         min-width: auto;
         width: 100%;
