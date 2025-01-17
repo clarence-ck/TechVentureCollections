@@ -14,8 +14,6 @@
     --link-color: #337ab7;
     --link-hover: #23527c;
     --bg-hover: #f7f7f7;
-    --header-height: 60px;
-    --mobile-padding: 1rem;
 }
 
 * {
@@ -533,61 +531,19 @@ h2 {
 }
 
 /* Responsive Design Improvements */
-@media screen and (max-width: 768px) {
-    .tab-navigation {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-    
-    .tab-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .yui-gc {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    color: var(--text-primary);
-}
-
-.mobile-nav-toggle .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: currentColor;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     #doc2 {
         margin: 1rem;
-        padding: 1.5rem;
+        max-width: calc(100% - 2rem);
     }
 
     #inner {
-        padding: 1.5rem;
+        padding: 2rem;
+    }
+
+    #hd {
+        margin: -2rem -2rem 2rem -2rem;
+        padding: 2rem;
     }
 
     .yui-gc {
@@ -595,81 +551,51 @@ h2 {
         gap: 1.5rem;
     }
 
-    .talent {
-        grid-template-columns: 1fr;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
+    .highlight-stats {
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: 768px) {
-    #doc2 {
-        margin: 0.5rem;
-        padding: 1rem;
-        border-radius: 10px;
-    }
-
     #inner {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     #hd {
-        padding: 2rem 1rem;
-        margin: -1rem -1rem 2rem -1rem;
+        margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+        padding: 1.5rem;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     h2 {
         font-size: 1.1rem;
     }
 
-    .mobile-nav-toggle {
-        display: block;
-    }
-
     .tab-navigation {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        max-width: 300px;
-        background: var(--bg-primary);
         flex-direction: column;
-        padding: 5rem 1rem;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 15px var(--shadow);
-        z-index: 999;
-    }
-
-    .tab-navigation.active {
-        right: 0;
+        gap: 0.5rem;
     }
 
     .tab-button {
         width: 100%;
-        text-align: left;
-        padding: 1rem;
-        margin: 0.25rem 0;
+        padding: 0.75rem;
     }
 
-    .highlight-stats {
-        grid-template-columns: 1fr 1fr;
+    .talent {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .project-card {
-        padding: 1rem;
-        padding-left: 1.5rem;
+    .project-cards {
+        grid-template-columns: 1fr;
     }
 
     .tech-stack {
         flex-wrap: wrap;
+        justify-content: flex-start;
         gap: 0.5rem;
     }
 
@@ -678,9 +604,24 @@ h2 {
         padding: 0.4rem 0.6rem;
     }
 
+    .project-card {
+        padding: 1.25rem;
+        padding-left: 1.75rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .project-links a {
+        width: 100%;
+        justify-content: center;
+    }
+
     .job {
-        padding: 1rem;
-        padding-left: 1.5rem;
+        padding: 1.25rem;
+        padding-left: 1.75rem;
     }
 
     .job-header {
@@ -688,42 +629,43 @@ h2 {
         gap: 0.5rem;
     }
 
-    .certification .job h3 {
-        font-size: 1rem;
-        white-space: normal;
+    .job-header.main-header h2 {
+        font-size: 1.25rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .highlight-stats {
-        grid-template-columns: 1fr;
+    #doc2 {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+        border-radius: 15px;
     }
 
-    .project-links {
-        flex-direction: column;
+    #inner {
+        padding: 1rem;
     }
 
-    .project-links a {
-        width: 100%;
-        text-align: left;
-    }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-    .tab-button,
-    .project-card a,
-    .tech-badge {
-        min-height: 44px;
-        padding: 0.8rem 1rem;
+    #hd {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1rem;
+        border-radius: 15px 15px 0 0;
     }
 
-    .project-links {
-        gap: 1rem;
+    h1 {
+        font-size: 2rem;
     }
 
-    .project-links a {
-        padding: 0.8rem 1rem;
+    .profile-summary {
+        padding: 1.25rem;
+        padding-left: 1.75rem;
+    }
+
+    .profile-summary ul {
+        padding-left: 1.5rem;
+    }
+
+    .stat-item {
+        flex: 0 0 100%;
     }
 }
 
