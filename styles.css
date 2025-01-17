@@ -891,15 +891,14 @@ h2 {
     .highlight-stats {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 0.35rem;
+        gap: 0.2rem;
         margin: 0;
         padding: 0;
-        max-height: 55px;
-        overflow: hidden;
+        max-height: 50px;
     }
 
     .stat-item {
-        padding: 0.2rem;
+        padding: 0.15rem 0.1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -907,13 +906,11 @@ h2 {
         justify-content: center;
         min-height: 0;
         height: auto;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
     }
 
     .stat-number {
-        font-size: 0.85rem;
-        margin-bottom: 0.15rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.1rem;
         line-height: 1;
         display: flex;
         align-items: center;
@@ -921,11 +918,11 @@ h2 {
     }
 
     .stat-number i {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .stat-label {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
         line-height: 1;
         margin: 0;
         padding: 0;
@@ -942,23 +939,24 @@ h2 {
 
     .highlight-stats {
         max-height: 45px;
+        gap: 0.15rem;
     }
 
     .stat-item {
-        padding: 0.15rem;
+        padding: 0.1rem 0.1rem;
     }
 
     .stat-number {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-bottom: 0.1rem;
     }
 
     .stat-number i {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .stat-label {
-        font-size: 0.5rem;
+        font-size: 0.45rem;
     }
 }
 
