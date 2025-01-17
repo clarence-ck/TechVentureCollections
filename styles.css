@@ -482,13 +482,16 @@ h2 {
 .job {
     position: relative;
     background: var(--bg-secondary);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    padding-left: 2rem;
-    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    padding: 2rem;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job:last-child {
+    margin-bottom: 0;
 }
 
 .job::before {
@@ -498,61 +501,77 @@ h2 {
     top: 0;
     bottom: 0;
     width: 6px;
-    background: linear-gradient(135deg, #0984e3, #00cec9, #0984e3);
+    background: linear-gradient(135deg, #0984e3, #00cec9); /* Match profile summary gradient */
     background-size: 100% 200%;
+}
+
+/* Certification styles */
+.certification .job {
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.certification .job:last-child {
+    margin-bottom: 0;
 }
 
 .job-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.job-header.main-header {
     margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .job-header h2 {
     color: var(--accent);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
 }
 
 .job-header h4 {
     color: var(--text-secondary);
+    font-weight: 500;
     margin: 0;
-    font-weight: 500;
 }
 
-.job h3 {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0.5rem 0;
-}
-
-.job ul {
-    margin: 0.5rem 0 1rem 0;
-    padding-left: 2.5rem;
-    list-style: none;
-}
-
-.job ul li {
-    position: relative;
-    padding: 0.25rem 0;
-    line-height: 1.5;
+.job-content {
     color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-.job ul li::before {
+.job-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.job-content ul li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.job-content ul li::before {
     content: "•";
+    color: var(--text-primary);
+    font-weight: bold;
     position: absolute;
     left: -1.5rem;
-    color: var(--text-primary);
+}
+
+.job-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.job-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.job-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Experience Section */
