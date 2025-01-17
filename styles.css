@@ -11,6 +11,22 @@
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --card-radius: 15px;
     --transition: all 0.3s ease;
+    --container-width: 100%;
+    --container-padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --container-width: calc(100% - 2rem);
+        --container-padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --container-width: min(1200px, calc(100% - 4rem));
+        --container-padding: 2rem;
+    }
 }
 
 /* Base Styles */
@@ -21,18 +37,24 @@ body {
     color: var(--text-primary);
     background: var(--bg-primary);
     line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
 }
 
 /* Layout */
 #doc2 {
-    max-width: 1200px;
+    width: var(--container-width);
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--container-padding);
     background: var(--bg-primary);
+    box-sizing: border-box;
 }
 
 .yui-t7 {
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Header Styles */
@@ -42,7 +64,7 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 700;
     margin: 0;
     background: var(--gradient);
@@ -52,7 +74,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--accent);
     margin: 1rem 0;
 }
@@ -60,19 +82,21 @@ h2 {
 /* Section Content */
 .section-content {
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* Card Styles */
 .content-card {
     background: var(--bg-secondary);
     border-radius: var(--card-radius);
-    padding: 1.5rem 2rem;
+    padding: var(--container-padding);
     margin-bottom: 1.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
     transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .content-card::before {
@@ -93,6 +117,7 @@ h2 {
     align-items: flex-start;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
+    box-sizing: border-box;
 }
 
 .card-header h3 {
@@ -112,6 +137,7 @@ h2 {
     padding: 1rem 2rem;
     margin-bottom: 1rem;
     transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .job.content-card[data-cert] .card-header {
@@ -130,6 +156,7 @@ h2 {
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0.5rem;
+    box-sizing: border-box;
 }
 
 #tech-exp .job.content-card h3:not(.card-header h3) {
@@ -140,6 +167,7 @@ h2 {
 
 #tech-exp .job.content-card ul {
     margin-top: 1rem;
+    box-sizing: border-box;
 }
 
 /* AML Experience Cards */
@@ -147,12 +175,14 @@ h2 {
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0.5rem;
+    box-sizing: border-box;
 }
 
 #aml-exp .job.content-card .job-header {
     border-top: 1px solid var(--border-light);
     margin-top: 1.5rem;
     padding-top: 1rem;
+    box-sizing: border-box;
 }
 
 #aml-exp .job.content-card .job-header:first-of-type {
@@ -164,8 +194,10 @@ h2 {
 /* Skills Section */
 .talent {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .talent h2 {
@@ -181,11 +213,18 @@ h2 {
     color: var(--text-secondary);
 }
 
+@media (min-width: 768px) {
+    .talent {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
 /* Project Cards */
 .project-cards {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -193,6 +232,7 @@ h2 {
     border-radius: var(--card-radius);
     overflow: hidden;
     transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -200,184 +240,62 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+@media (min-width: 768px) {
+    .project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 /* Tab Navigation */
 .tab-navigation {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .tab-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
+    width: 100%;
+    text-align: center;
 }
 
-.tab-button:hover,
-.tab-button.active {
-    background: var(--gradient);
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    #doc2 {
-        margin: 1rem;
-        padding: 1.5rem;
-        max-width: calc(100% - 2rem);
+@media (min-width: 768px) {
+    .tab-navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
+    .tab-button {
+        width: auto;
+    }
+}
+
+/* Typography */
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
     h1 {
         font-size: 2.5rem;
     }
 
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    #doc2 {
-        margin: 0.5rem;
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .content-card {
-        padding: 1.25rem;
-    }
-
-    .card-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .talent {
-        grid-template-columns: 1fr;
-    }
-
-    .tab-navigation {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .tab-button {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.75rem;
-    }
-
     h2 {
-        font-size: 1.25rem;
-    }
-
-    .content-card {
-        padding: 1rem;
+        font-size: 1.5rem;
     }
 }
 
-/* Print Styles */
-@media print {
-    body {
-        background: white;
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
     }
-
-    #doc2 {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .content-card::before {
-        display: none;
-    }
-
-    .tab-navigation {
-        display: none;
-    }
-
-    .tab-section {
-        display: block !important;
-    }
-}
-
-/* Tab Container */
-#yui-main {
-    position: relative;
-}
-
-/* Tab Section Styles */
-.tab-section {
-    display: none;
-}
-
-.tab-section.active {
-    display: block;
-}
-
-/* Project Grid */
-.project-grid {
-    width: 100%;
-}
-
-/* Project Cards */
-.project-cards {
-    display: grid;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-/* Project Links Container */
-.project-links {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-top: 1.25rem;
-    flex-wrap: wrap;
-}
-
-/* Individual Project Link */
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-}
-
-.project-link i {
-    font-size: 1rem;
-    width: 1.25rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-link:hover {
-    color: var(--accent);
-    transform: translateY(-2px);
-    background: var(--bg-primary);
 }
 
 /* Footer */
@@ -386,13 +304,15 @@ h2 {
     padding: 2rem 0;
     margin-top: 3rem;
     border-top: 1px solid #e9ecef;
+    box-sizing: border-box;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 1rem;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .social-links {
@@ -401,6 +321,7 @@ h2 {
     gap: 2rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .social-link {
@@ -411,6 +332,7 @@ h2 {
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 0.5rem;
+    box-sizing: border-box;
 }
 
 .social-link:hover {
@@ -425,6 +347,7 @@ h2 {
     color: #6c757d;
     font-size: 0.875rem;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* Tab Transitions */
@@ -432,6 +355,7 @@ h2 {
     opacity: 0;
     display: none;
     transition: opacity 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 .tab-section.active {
@@ -529,6 +453,7 @@ h2 {
     color: white;
     font-size: 0.875rem;
     margin: 0.25rem;
+    box-sizing: border-box;
 }
 
 .tech-stack {
@@ -536,6 +461,9 @@ h2 {
     flex-wrap: wrap;
     gap: 0.75rem;
     margin: 1rem 0;
+    padding-left: 0.125rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Tech Stack Badges */
@@ -546,6 +474,7 @@ h2 {
     margin: 1rem 0;
     padding-left: 0.125rem;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .tech-badge {
@@ -564,6 +493,7 @@ h2 {
     white-space: nowrap;
     min-width: max-content;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
 }
 
 .tech-badge i {
@@ -613,6 +543,7 @@ h2 {
 .job,
 .tech-badge {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
 }
 
 .profile-summary:hover,
@@ -675,6 +606,7 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: fit-content;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .stat-item {
@@ -686,6 +618,7 @@ h2 {
     transition: transform 0.3s ease;
     width: 100%;
     min-width: 250px;
+    box-sizing: border-box;
 }
 
 .stat-item:hover {
@@ -704,6 +637,7 @@ h2 {
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .stat-label {
@@ -714,6 +648,7 @@ h2 {
     text-align: left;
     flex: 1;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -824,6 +759,7 @@ h2 {
 /* Specific Section Styles */
 .profile-summary {
     margin-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .profile-summary p {
@@ -834,17 +770,32 @@ h2 {
 .profile-summary ul {
     padding-left: 2rem;
     margin: 1rem 0;
+    box-sizing: border-box;
 }
 
 .talent {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-cards {
     display: grid;
     gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .talent {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 /* Responsive Adjustments */
