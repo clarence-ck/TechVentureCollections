@@ -488,6 +488,18 @@ h2 {
     background-size: 100% 200%;
 }
 
+/* Microsoft - Official brand colors (red, green, blue, yellow) */
+.certification .job[data-cert="microsoft"]::before {
+    background: linear-gradient(135deg, #ef332f, #7FBA00, #00A4EF, #FFB900);
+    background-size: 100% 200%;
+}
+
+/* SSG - Official purple and red colors */
+.certification .job[data-cert="ssg"]::before {
+    background: linear-gradient(135deg, #6B2C91, #E31837, #6B2C91);
+    background-size: 100% 200%;
+}
+
 /* Job Cards */
 .job {
     position: relative;
