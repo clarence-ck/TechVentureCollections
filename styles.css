@@ -51,6 +51,42 @@ body {
     overflow: hidden;
 }
 
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.pl-logo {
+    height: 12rem;
+    width: auto;
+    opacity: 0.15;
+    filter: brightness(1.2) contrast(0.8);
+    transform: none;
+    margin: 0;
+    max-width: none;
+    mix-blend-mode: overlay;
+}
+
+#hd h1, #hd h2, .yui-gc {
+    position: relative;
+    z-index: 2;
+}
+
+#hd h1 {
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+}
+
 #hd::before {
     content: '';
     position: absolute;
@@ -75,32 +111,6 @@ body {
     opacity: 0.07;
     pointer-events: none;
     mix-blend-mode: overlay;
-}
-
-#hd h1 {
-    position: relative;
-    z-index: 1;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    letter-spacing: 0.02em;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.pl-logo {
-    height: 3.5rem;
-    width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    transition: transform 0.3s ease;
-    margin-left: 0.5rem;
-    transform: translateY(-0.25rem);
-    position: relative;
-    top: -0.125rem;
-}
-
-.pl-logo:hover {
-    transform: translateY(-0.25rem) scale(1.05);
 }
 
 .yui-gc {
