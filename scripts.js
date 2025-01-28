@@ -1,37 +1,66 @@
 // Tab navigation functionality
+function removeFadeClasses(element) {
+    element.classList.remove('active', 'fade-out', 'fade-in');
+}
+
+function addFadeClasses(element, classes) {
+    element.classList.add(...classes);
+}
+
 function showSection(sectionId) {
-    // Add fade-out class to current active section
+    // Get current and new sections
     const currentActive = document.querySelector('.tab-section.active');
+    const newSection = document.getElementById(sectionId);
+    
+    // Handle current active section
     if (currentActive) {
-        currentActive.classList.add('fade-out');
-        setTimeout(() => {
-            currentActive.classList.remove('active', 'fade-out');
-        }, 200);
+        addFadeClasses(currentActive, ['fade-out']);
+        requestAnimationFrame(() => {
+            removeFadeClasses(currentActive);
+        });
     }
 
-    // Update tab sections
-    setTimeout(() => {
-        document.getElementById(sectionId).classList.add('active', 'fade-in');
-    }, 200);
+    // Update new section
+    requestAnimationFrame(() => {
+        addFadeClasses(newSection, ['active', 'fade-in']);
+    });
 
     // Update tab buttons
     document.querySelectorAll('.tab-button').forEach(button => {
         button.classList.remove('active');
     });
-    document.querySelector(`button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    
+    const activeButton = document.querySelector(`.tab-button[data-section="${sectionId}"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
 }
 
-// Initialize the page with the about-me section
+// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
+    // Set up tab button click handlers
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const sectionId = button.getAttribute('data-section');
+            if (sectionId) {
+                showSection(sectionId);
+            }
+        });
+    });
+
+    // Initialize with about-me section
     showSection('about-me');
 
     // Add smooth scroll behavior for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
