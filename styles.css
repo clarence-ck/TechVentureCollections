@@ -660,25 +660,26 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 0.25rem;
-    margin: 1rem -0.5rem 2rem -0.5rem;
-    padding: 0 0.5rem;
+    margin: 1rem 0 2rem 0;
+    padding: 0;
+    width: 100%;
 }
 
 .tab-button {
     position: relative;
-    padding: 0.5rem;
+    padding: 0.4rem;
     border: none;
     border-radius: 8px;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
     white-space: nowrap;
 }
@@ -724,7 +725,6 @@ h2 {
     .tab-navigation {
         gap: 1rem;
         margin: 2rem 0;
-        padding: 0;
     }
 
     .tab-button {
