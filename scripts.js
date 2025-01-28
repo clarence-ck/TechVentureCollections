@@ -1,24 +1,49 @@
 // Tab navigation functionality
 function showSection(sectionId) {
-    // Add fade-out class to current active section
-    const currentActive = document.querySelector('.tab-section.active');
-    if (currentActive) {
-        currentActive.classList.add('fade-out');
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('.tab-section');
+    const targetSection = document.getElementById(sectionId);
+    const currentSection = document.querySelector('.tab-section.active');
+
+    // Update button states
+    buttons.forEach(button => {
+        button.classList.remove('active');
+        if (button.getAttribute('onclick').includes(sectionId)) {
+            button.classList.add('active');
+        }
+    });
+
+    // If there's a current section, fade it out first
+    if (currentSection) {
+        currentSection.classList.add('fade-out');
+        currentSection.classList.remove('active');
+        
+        // Wait for fade out to complete
         setTimeout(() => {
-            currentActive.classList.remove('active', 'fade-out');
+            currentSection.style.display = 'none';
+            currentSection.classList.remove('fade-out');
+            
+            // Show and fade in the new section
+            targetSection.style.display = 'block';
+            // Force a reflow to ensure the transition works
+            void targetSection.offsetWidth;
+            targetSection.classList.add('active', 'fade-in');
+            
+            // Clean up fade-in class after animation
+            setTimeout(() => {
+                targetSection.classList.remove('fade-in');
+            }, 200);
+        }, 200);
+    } else {
+        // If no current section, just show the new one
+        targetSection.style.display = 'block';
+        void targetSection.offsetWidth;
+        targetSection.classList.add('active', 'fade-in');
+        
+        setTimeout(() => {
+            targetSection.classList.remove('fade-in');
         }, 200);
     }
-
-    // Update tab sections
-    setTimeout(() => {
-        document.getElementById(sectionId).classList.add('active', 'fade-in');
-    }, 200);
-
-    // Update tab buttons
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.classList.remove('active');
-    });
-    document.querySelector(`button[onclick="showSection('${sectionId}')"]`).classList.add('active');
 }
 
 // Initialize the page with the about-me section
