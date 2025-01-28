@@ -213,7 +213,7 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .project-card::before {
@@ -286,7 +286,7 @@ h2 {
     line-height: 1;
     white-space: nowrap;
     min-width: max-content;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .tech-badge i {
@@ -401,7 +401,7 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .profile-summary::before {
@@ -457,7 +457,7 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .certification .job > div {
@@ -577,7 +577,7 @@ h2 {
     width: 6px;
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
     background-size: 100% 200%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 /* Certification styles */
@@ -706,7 +706,7 @@ h2 {
     font-size: 0.7rem;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
     overflow: hidden;
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
     flex: 1 1 18%;
@@ -741,15 +741,10 @@ h2 {
 
 .tab-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 20px rgba(115, 103, 255, 0.2);
-}
-
-.tab-button:hover::before {
-    opacity: 1;
 }
 
 .tab-button.active {
-    box-shadow: 0 12px 20px rgba(115, 103, 255, 0.25);
+    background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
 }
 
 @media screen and (min-width: 768px) {
@@ -837,7 +832,7 @@ h2 {
     line-height: 1;
     white-space: nowrap;
     min-width: max-content;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .tech-badge i {
@@ -886,19 +881,17 @@ h2 {
 .project-card,
 .job,
 .tech-badge {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .profile-summary:hover,
 .project-card:hover,
 .job:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px var(--shadow);
 }
 
 .tech-badge:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow);
 }
 
 /* Project Card Gradient Animation */
@@ -1183,7 +1176,6 @@ h2 {
     /* Maintain desktop hover effects */
     .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 4px 8px var(--shadow);
     }
 
     /* Force desktop-style touch targets */
