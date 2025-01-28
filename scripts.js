@@ -1,4 +1,4 @@
-// Tab navigation functionality
+// Utility functions for managing fade classes
 function removeFadeClasses(element) {
     element.classList.remove('active', 'fade-out', 'fade-in');
 }
@@ -7,6 +7,16 @@ function addFadeClasses(element, classes) {
     element.classList.add(...classes);
 }
 
+function updateButtonBackground(button, isActive) {
+    const background = button.querySelector('.button-background');
+    if (background) {
+        background.style.background = isActive ? 
+            'var(--gradient-main)' : 
+            'var(--gradient-button-inactive)';
+    }
+}
+
+// Tab navigation functionality
 function showSection(sectionId) {
     // Get current and new sections
     const currentActive = document.querySelector('.tab-section.active');
@@ -20,7 +30,7 @@ function showSection(sectionId) {
         });
     }
 
-    // Update new section
+    // Update new section with animation frame
     requestAnimationFrame(() => {
         addFadeClasses(newSection, ['active', 'fade-in']);
     });
@@ -28,26 +38,18 @@ function showSection(sectionId) {
     // Update tab buttons
     document.querySelectorAll('.tab-button').forEach(button => {
         button.classList.remove('active');
+        updateButtonBackground(button, false);
     });
     
-    const activeButton = document.querySelector(`.tab-button[data-section="${sectionId}"]`);
+    const activeButton = document.querySelector(`button[onclick="showSection('${sectionId}')"]`);
     if (activeButton) {
         activeButton.classList.add('active');
+        updateButtonBackground(activeButton, true);
     }
 }
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Set up tab button click handlers
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const sectionId = button.getAttribute('data-section');
-            if (sectionId) {
-                showSection(sectionId);
-            }
-        });
-    });
-
     // Initialize with about-me section
     showSection('about-me');
 
