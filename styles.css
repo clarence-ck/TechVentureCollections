@@ -49,6 +49,7 @@ body {
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
     color: white;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 #hd::before {
@@ -658,24 +659,28 @@ h2 {
 .tab-navigation {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 0.25rem;
+    margin: 1rem -0.5rem 2rem -0.5rem;
+    padding: 0 0.5rem;
 }
 
 .tab-button {
     position: relative;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem;
     border: none;
     border-radius: 8px;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.75rem;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
 }
 
 .tab-button::before {
@@ -713,6 +718,20 @@ h2 {
 
 .tab-button.active {
     box-shadow: 0 12px 20px rgba(115, 103, 255, 0.25);
+}
+
+@media screen and (min-width: 768px) {
+    .tab-navigation {
+        gap: 1rem;
+        margin: 2rem 0;
+        padding: 0;
+    }
+
+    .tab-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        flex: 0 1 auto;
+    }
 }
 
 /* Tab Section Transitions */
