@@ -28,24 +28,24 @@ body {
 }
 
 #doc2 {
-    max-width: 1140px;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 0;
     background: var(--bg-primary);
-    border-radius: 20px;
+    border-radius: 0;
     box-shadow: 0 10px 30px var(--shadow);
     overflow: hidden;
     padding: 0;
 }
 
 #inner {
-    padding: 3rem;
+    padding: 1.5rem;
     overflow: visible;
 }
 
-/* Header Section */
 #hd {
     position: relative;
-    padding: 1rem;
+    padding: 2rem 1.5rem;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
     color: white;
     overflow: hidden;
@@ -1227,4 +1227,21 @@ h2 {
     color: #6c757d;
     font-size: 0.875rem;
     margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    #doc2 {
+        max-width: 1140px;
+        margin: 2rem auto;
+        border-radius: 20px;
+    }
+
+    #inner {
+        padding: 3rem;
+    }
+
+    #hd {
+        padding: 3rem;
+        margin: -3rem -3rem 3rem -3rem;
+    }
 }
