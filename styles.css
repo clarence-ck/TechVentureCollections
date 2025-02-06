@@ -584,8 +584,8 @@ h2 {
 }
 
 .job-header {
-    display: grid;
-    grid-template-columns: 1fr 200px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
@@ -593,7 +593,7 @@ h2 {
 .job-header h2,
 .job-header h4 {
     margin: 0;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .job-header h2 {
@@ -605,6 +605,7 @@ h2 {
 .job-header h4 {
     color: var(--text-secondary);
     font-weight: 500;
+    min-width: 200px;
     text-align: right;
 }
 
