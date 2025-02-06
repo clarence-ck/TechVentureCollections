@@ -85,6 +85,12 @@ body {
     align-items: center;
 }
 
+/* Base heading styles */
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    margin: 0;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -96,7 +102,6 @@ h2 {
     font-size: 1.25rem;
     font-weight: 400;
     opacity: 0.9;
-    line-height: 1.8;
 }
 
 /* Header Titles */
@@ -475,7 +480,7 @@ h2 {
     flex: 1;
     min-width: 0; /* Allow text to wrap when container is too narrow */
     word-wrap: break-word; /* Allow long words to break */
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .certification .job h4 {
@@ -682,6 +687,39 @@ h2 {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
+}
+
+/* Job and section headers alignment */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.job-header h2 {
+    flex: 1;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.job-header h4 {
+    min-width: 200px;
+    text-align: right;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Maintain specific styles */
+.job-header h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.job-header h4 {
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 /* Tab Navigation Styles */
