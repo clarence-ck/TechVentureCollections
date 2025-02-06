@@ -455,14 +455,12 @@ h2 {
 }
 
 .certification .job {
-    background: var(--bg-secondary);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    padding-left: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.certification .job:last-child {
+    margin-bottom: 0;
 }
 
 .certification .job > div {
@@ -583,16 +581,6 @@ h2 {
     background: linear-gradient(135deg, #37B6CE 20%, #7367FF 81%, #963CFF 100%);
     background-size: 100% 200%;
     transition: transform 0.2s ease;
-}
-
-/* Certification styles */
-.certification .job {
-    border-radius: 15px;
-    margin-bottom: 2rem;
-}
-
-.certification .job:last-child {
-    margin-bottom: 0;
 }
 
 .job-header {
