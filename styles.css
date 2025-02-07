@@ -164,57 +164,37 @@ h2 {
 
 .talent > div {
     background: var(--bg-secondary);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    min-width: 0; /* Prevents overflow in grid items */
 }
 
 .talent h2 {
     color: var(--accent);
     font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     white-space: nowrap;
 }
 
 .talent h2 i {
     color: var(--accent);
     font-size: 1.25rem;
-    width: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
 }
 
 .talent p {
     color: var(--text-secondary);
-    margin: 0;
-    font-size: 0.95rem;
-    padding-left: 0.25rem;
-    line-height: 1.6;
+    margin: 0.75rem 0;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    overflow-wrap: break-word;
     word-wrap: break-word;
-}
-
-@media screen and (min-width: 768px) {
-    .talent > div {
-        padding: 2rem;
-    }
-    
-    .talent h2 {
-        font-size: 1.5rem;
-    }
-    
-    .talent p {
-        font-size: 1.1rem;
-        padding-left: 0.5rem;
-    }
+    hyphens: auto;
 }
 
 /* Project Grid */
@@ -446,13 +426,20 @@ h2 {
 }
 
 .profile-summary ul {
-    list-style: disc outside;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
+    margin: 1rem 0;
 }
 
 .profile-summary ul li {
-    display: list-item;
-    padding-left: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.profile-summary ul li:last-child {
+    margin-bottom: 0;
 }
 
 .profile-summary p {
@@ -634,16 +621,16 @@ h2 {
 }
 
 .job-content ul {
-    list-style: disc outside;
+    list-style-type: disc;
     padding-left: 1.5rem;
     margin: 1rem 0;
 }
 
 .job-content ul li {
-    display: list-item;
+    position: relative;
     margin-bottom: 0.75rem;
     line-height: 1.6;
-    padding-left: 0;
+    padding-left: 0.5rem;
 }
 
 .job-content ul li:last-child {
@@ -1319,13 +1306,10 @@ h2 {
     font-size: 1.25rem;
 }
 
-.copyright, .browser-note {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    line-height: 1.5;
+.copyright {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
