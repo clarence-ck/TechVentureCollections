@@ -78,7 +78,7 @@ body {
     mix-blend-mode: overlay;
 }
 
-.yui-gc {
+.header-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
@@ -129,12 +129,12 @@ h2 {
 }
 
 /* Content Sections */
-.yui-gf {
+.section-container {
     margin-bottom: 4rem;
     position: relative;
 }
 
-.yui-u.first h2 {
+.section-title h2 {
     font-size: 1.75rem;
     font-weight: 600;
     color: var(--accent);
@@ -145,12 +145,18 @@ h2 {
     width: 100%;
 }
 
-.yui-u.first h2::after {
+.section-title h2::after {
     content: "";
     flex: 1;
     height: 2px;
     background: var(--border);
     margin-left: 0.5rem;
+}
+
+/* Remove empty ruleset and add actual properties */
+.section-content {
+    width: 100%;
+    display: block;
 }
 
 /* Skills Section */
@@ -1126,7 +1132,7 @@ h2 {
     }
 
     /* Restore desktop grid layouts */
-    .yui-gc {
+    .header-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 2rem;
@@ -1353,5 +1359,31 @@ h2 {
         padding: 0.5rem 0.875rem;
         font-size: 0.875rem;
         gap: 0.625rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+    
+    .section-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .section-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
